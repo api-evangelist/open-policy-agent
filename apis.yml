@@ -1,4 +1,25 @@
+specificationVersion: '0.19'
 aid: open-policy-agent
+name: Open Policy Agent
+tags:
+  - Policies
+  - Standards
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+access: 3rd-Party
+created: '2024-11-18'
+modified: '2024-11-18'
+position: Consumer
+description: >-
+  Stop using a different policy language, policy model, and policy API for every
+  product and service you use. Use OPA for a unified toolset and framework for
+  policy across the cloud native stack. Whether for one service or for all your
+  services, use OPA to decouple policy from the service's code so you can
+  release, analyze, and review policies (which security and compliance teams
+  love) without sacrificing availability or performance.
+maintainers:
+  - FN: Kin Lane
+    email: info@apievangelist.com
 url: >-
   https://raw.githubusercontent.com/api-search/open-policy-agent/refs/heads/main/apis.yml
 apis:
@@ -116,27 +137,7 @@ apis:
     description: >-
       API for accessing OPA (Open Policy Agent) status information via a
       pull-based mechanism.
-name: Open Policy Agent
-tags:
-  - Policies
-  - Standards
-type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-access: 3rd-Party
-created: '2024-11-18T00:00:00.000Z'
-modified: '2024-11-18'
-position: Consumer
-description: >-
-  Stop using a different policy language, policy model, and policy API for every
-  product and service you use. Use OPA for a unified toolset and framework for
-  policy across the cloud native stack. Whether for one service or for all your
-  services, use OPA to decouple policy from the service's code so you can
-  release, analyze, and review policies (which security and compliance teams
-  love) without sacrificing availability or performance.
-maintainers:
-  - FN: Kin Lane
-    email: info@apievangelist.com
-specificationVersion: '0.19'
+
 common:
   - name: Documentation
     url: https://www.openpolicyagent.org/docs/latest/rest-api/
