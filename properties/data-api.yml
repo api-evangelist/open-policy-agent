@@ -1,0 +1,292 @@
+openapi: 3.1.0
+info:
+  title: Data API
+  description: API for reading and writing documents in OPA (Open Policy Agent).
+  version: 1.0.0
+paths:
+  /v1/data/{path}:
+    get:
+      summary: Get a Document
+      description: Retrieve a document from the specified path.
+      parameters:
+        - name: path
+          in: path
+          required: true
+          description: Path to the document
+          schema:
+            type: string
+        - name: input
+          in: query
+          required: false
+          description: Input document in JSON format
+          schema:
+            type: object
+        - name: pretty
+          in: query
+          required: false
+          description: Format response for human readability
+          schema:
+            type: boolean
+        - name: provenance
+          in: query
+          required: false
+          description: Include build/version information
+          schema:
+            type: boolean
+        - name: explain
+          in: query
+          required: false
+          description: Return query explanation
+          schema:
+            type: string
+            enum:
+              - notes
+              - fails
+              - full
+              - debug
+        - name: metrics
+          in: query
+          required: false
+          description: Return performance metrics
+          schema:
+            type: boolean
+        - name: instrument
+          in: query
+          required: false
+          description: Instrument query evaluation
+          schema:
+            type: boolean
+        - name: strict-builtin-errors
+          in: query
+          required: false
+          description: Treat built-in function call errors as fatal
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: Document retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: object
+                  metrics:
+                    type: object
+                  decision_id:
+                    type: string
+        '400':
+          description: Bad request
+        '500':
+          description: Server error
+    post:
+      summary: Get a Document (with Input)
+      description: Retrieve a document that requires an input document.
+      parameters:
+        - name: path
+          in: path
+          required: true
+          description: Path to the document
+          schema:
+            type: string
+        - name: pretty
+          in: query
+          required: false
+          description: Format response for human readability
+          schema:
+            type: boolean
+        - name: provenance
+          in: query
+          required: false
+          description: Include build/version information
+          schema:
+            type: boolean
+        - name: explain
+          in: query
+          required: false
+          description: Return query explanation
+          schema:
+            type: string
+            enum:
+              - notes
+              - fails
+              - full
+              - debug
+        - name: metrics
+          in: query
+          required: false
+          description: Return performance metrics
+          schema:
+            type: boolean
+        - name: instrument
+          in: query
+          required: false
+          description: Instrument query evaluation
+          schema:
+            type: boolean
+        - name: strict-builtin-errors
+          in: query
+          required: false
+          description: Treat built-in function call errors as fatal
+          schema:
+            type: boolean
+      requestBody:
+        description: Input document in JSON format
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Document retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: object
+                  metrics:
+                    type: object
+                  decision_id:
+                    type: string
+        '400':
+          description: Bad request
+        '500':
+          description: Server error
+    put:
+      summary: Create or Overwrite a Document
+      description: Create or overwrite a document at the specified path.
+      parameters:
+        - name: path
+          in: path
+          required: true
+          description: Path to the document
+          schema:
+            type: string
+        - name: metrics
+          in: query
+          required: false
+          description: Return performance metrics
+          schema:
+            type: boolean
+      requestBody:
+        description: Document content in JSON format
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '204':
+          description: Document created or overwritten successfully
+        '400':
+          description: Bad request
+        '404':
+          description: Write conflict
+        '500':
+          description: Server error
+    patch:
+      summary: Patch a Document
+      description: Update a document using JSON Patch.
+      parameters:
+        - name: path
+          in: path
+          required: true
+          description: Path to the document
+          schema:
+            type: string
+      requestBody:
+        description: JSON Patch operations
+        required: true
+        content:
+          application/json-patch+json:
+            schema:
+              type: array
+              items:
+                type: object
+                properties:
+                  op:
+                    type: string
+                    enum:
+                      - add
+                      - remove
+                      - replace
+                      - move
+                      - copy
+                      - test
+                  path:
+                    type: string
+                  value:
+                    type: object
+      responses:
+        '204':
+          description: Document patched successfully
+        '400':
+          description: Bad request
+        '404':
+          description: Document not found
+        '500':
+          description: Server error
+    delete:
+      summary: Delete a Document
+      description: Delete a document at the specified path.
+      parameters:
+        - name: path
+          in: path
+          required: true
+          description: Path to the document
+          schema:
+            type: string
+        - name: metrics
+          in: query
+          required: false
+          description: Return performance metrics
+          schema:
+            type: boolean
+      responses:
+        '204':
+          description: Document deleted successfully
+        '404':
+          description: Document not found
+        '500':
+          description: Server error
+  /v0/data/{path}:
+    post:
+      summary: Get a Document (Webhook)
+      description: Retrieve a document from a webhook.
+      parameters:
+        - name: path
+          in: path
+          required: true
+          description: Path to the document
+          schema:
+            type: string
+        - name: pretty
+          in: query
+          required: false
+          description: Format response for human readability
+          schema:
+            type: boolean
+      requestBody:
+        description: Input document in JSON format
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Document retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '404':
+          description: Document not found
+        '500':
+          description: Server error
