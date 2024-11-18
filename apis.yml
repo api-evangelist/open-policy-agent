@@ -65,12 +65,16 @@ apis:
   - aid: open-policy-agent:config-api
     name: Config API
     tags:
-      - API
+      - Configurations
     humanURL: https://www.openpolicyagent.org/docs/latest/rest-api/#config-api
     properties:
       - url: https://www.openpolicyagent.org/docs/latest/rest-api/#config-api
         type: Documentation
-    description: View instance configuration.
+      - type: OpenAPI
+        url: properties/config-api.yml
+    description: >-
+      API for retrieving OPA's active configuration, including discovered
+      configurations.
   - aid: open-policy-agent:status-api
     name: Status API
     tags:
