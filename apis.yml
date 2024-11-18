@@ -16,12 +16,15 @@ apis:
   - aid: open-policy-agent:data-api
     name: Data API
     tags:
-      - API
+      - Data
+      - Documents
     humanURL: https://www.openpolicyagent.org/docs/latest/rest-api/#data-api
     properties:
       - url: https://www.openpolicyagent.org/docs/latest/rest-api/#data-api
         type: Documentation
-    description: Evaluate rules and retrieve data.
+      - type: OpenAPI
+        url: properties/data-api.yml
+    description: API for reading and writing documents in OPA (Open Policy Agent).
   - aid: open-policy-agent:query-api
     name: Query API
     tags:
