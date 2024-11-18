@@ -1,0 +1,151 @@
+openapi: 3.1.0
+info:
+  title: Query API
+  description: API for executing simple and ad-hoc queries in OPA (Open Policy Agent).
+  version: 1.0.0
+paths:
+  /:
+    post:
+      summary: Execute a Simple Query
+      description: Execute a simple query using the default decision (`/data/system/main`).
+      requestBody:
+        description: Input document in JSON or YAML format.
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+          application/yaml:
+            schema:
+              type: object
+      parameters:
+        - name: pretty
+          in: query
+          required: false
+          description: Format response for human readability
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: Query executed successfully
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '404':
+          description: Document not found
+        '500':
+          description: Server error
+  /v1/query:
+    get:
+      summary: Execute an Ad-hoc Query (GET)
+      description: Execute an ad-hoc query by providing the query as a URL parameter.
+      parameters:
+        - name: q
+          in: query
+          required: true
+          description: Ad-hoc query to execute (URL encoded)
+          schema:
+            type: string
+        - name: pretty
+          in: query
+          required: false
+          description: Format response for human readability
+          schema:
+            type: boolean
+        - name: explain
+          in: query
+          required: false
+          description: Return query explanation
+          schema:
+            type: string
+            enum:
+              - notes
+              - fails
+              - full
+              - debug
+        - name: metrics
+          in: query
+          required: false
+          description: Return query performance metrics
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: Query executed successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: array
+                    items:
+                      type: object
+        '400':
+          description: Bad request
+        '500':
+          description: Server error
+        '501':
+          description: Streaming not implemented
+    post:
+      summary: Execute an Ad-hoc Query (POST)
+      description: Execute an ad-hoc query by providing the query in the request body.
+      requestBody:
+        description: Query and optional input document in JSON format.
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                query:
+                  type: string
+                  description: Ad-hoc query to execute
+                input:
+                  type: object
+                  description: Optional input document
+      parameters:
+        - name: pretty
+          in: query
+          required: false
+          description: Format response for human readability
+          schema:
+            type: boolean
+        - name: explain
+          in: query
+          required: false
+          description: Return query explanation
+          schema:
+            type: string
+            enum:
+              - notes
+              - fails
+              - full
+              - debug
+        - name: metrics
+          in: query
+          required: false
+          description: Return query performance metrics
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: Query executed successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: array
+                    items:
+                      type: object
+        '400':
+          description: Bad request
+        '500':
+          description: Server error
+        '501':
+          description: Streaming not implemented
