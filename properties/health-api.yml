@@ -1,0 +1,104 @@
+openapi: 3.1.0
+info:
+  title: Health API
+  description: >-
+    API for checking the health and readiness of an OPA (Open Policy Agent)
+    server.
+  version: 1.0.0
+paths:
+  /health:
+    get:
+      summary: Health Check
+      description: Perform a health check to verify that the server is operational.
+      parameters:
+        - name: bundles
+          in: query
+          required: false
+          description: Include bundle activation status in the health check.
+          schema:
+            type: boolean
+        - name: plugins
+          in: query
+          required: false
+          description: Include plugin status in the health check.
+          schema:
+            type: boolean
+        - name: exclude-plugin
+          in: query
+          required: false
+          description: >-
+            Exclude specific plugins from the health check. Can be specified
+            multiple times.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OPA service is healthy.
+          content:
+            application/json:
+              schema:
+                type: object
+        '500':
+          description: OPA service is not healthy.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Error message indicating the reason for failure.
+      examples:
+        healthy_response:
+          summary: Healthy Response
+          value: {}
+        unhealthy_response:
+          summary: Unhealthy Response
+          value:
+            error: not all plugins in OK state
+  /health/{rule-name}:
+    get:
+      summary: Custom Health Check
+      description: >-
+        Perform a custom health check using the policy at
+        `data.system.health.<rule-name>`.
+      parameters:
+        - name: rule-name
+          in: path
+          required: true
+          description: Name of the rule to evaluate in the `system.health` package.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OPA service is healthy.
+          content:
+            application/json:
+              schema:
+                type: object
+        '500':
+          description: OPA service is not healthy.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Error message indicating the reason for failure.
+      examples:
+        healthy_response:
+          summary: Healthy Response
+          value: {}
+        unhealthy_response:
+          summary: Unhealthy Response
+          value:
+            error: health policy was not true at data.system.health.<rule-name>
+components:
+  schemas:
+    HealthCheckError:
+      type: object
+      properties:
+        error:
+          type: string
+          description: Error message indicating the reason for failure.
