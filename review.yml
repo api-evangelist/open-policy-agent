@@ -1,4 +1,4 @@
-executed: '2024-11-18T01:46:07.392Z'
+executed: '2024-11-18T01:48:09.430Z'
 results:
   - code: apis-json-specification-aid-info
     message: There is an aid.
@@ -477,7 +477,7 @@ results:
         character: 4
       end:
         line: 39
-        character: 64
+        character: 69
   - code: apis-json-apis-contact-error
     message: API COULD have a contact.
     path:
@@ -490,7 +490,7 @@ results:
         character: 4
       end:
         line: 39
-        character: 64
+        character: 69
   - code: apis-json-apis-aid-info
     message: API has an aid property.
     path:
@@ -607,7 +607,7 @@ results:
         character: 17
       end:
         line: 39
-        character: 64
+        character: 69
   - code: apis-json-apis-baseURL-error
     message: APIs MUST Have a Base URL
     path:
@@ -1134,7 +1134,7 @@ results:
         character: 10
       end:
         line: 75
-        character: 22
+        character: 36
   - code: apis-json-description-info
     message: There is a description.
     path:
