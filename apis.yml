@@ -1,0 +1,31 @@
+aid: open-policy-agent
+name: Open Policy Agent
+description: >-
+  The Policy API exposes CRUD endpoints for managing policy modules. Policy
+  modules can be added, removed, and modified at any time.
+type: Index
+position: Consumer
+access: 3rd-Party
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - API
+created: '2024-11-18'
+modified: '2024-11-18'
+url: >-
+  https://raw.githubusercontent.com/api-search/open-policy-agent/refs/heads/main/apis.yml
+specificationVersion: '0.19'
+apis:
+  - aid: open-policy-agent:open-policy-agent
+    name: Open Policy Agent
+    description: >-
+      The Policy API exposes CRUD endpoints for managing policy modules. Policy
+      modules can be added, removed, and modified at any time.
+    humanURL: https://www.openpolicyagent.org/docs/latest/rest-api/
+    tags:
+      - API
+    properties:
+      - type: Documentation
+        url: https://www.openpolicyagent.org/docs/latest/rest-api/
+maintainers:
+  - FN: Kin Lane
+    email: info@apievangelist.com
