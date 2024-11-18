@@ -1,31 +1,88 @@
 aid: open-policy-agent
-name: Open Policy Agent
-description: >-
-  The Policy API exposes CRUD endpoints for managing policy modules. Policy
-  modules can be added, removed, and modified at any time.
-type: Index
-position: Consumer
-access: 3rd-Party
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-tags:
-  - API
-created: '2024-11-18'
-modified: '2024-11-18'
 url: >-
   https://raw.githubusercontent.com/api-search/open-policy-agent/refs/heads/main/apis.yml
-specificationVersion: '0.19'
 apis:
-  - aid: open-policy-agent:open-policy-agent
-    name: Open Policy Agent
-    description: >-
-      The Policy API exposes CRUD endpoints for managing policy modules. Policy
-      modules can be added, removed, and modified at any time.
-    humanURL: https://www.openpolicyagent.org/docs/latest/rest-api/
+  - aid: open-policy-agent:policy-api
+    name: Policy API
     tags:
       - API
+    humanURL: https://www.openpolicyagent.org/docs/latest/rest-api/#policy-api
     properties:
-      - type: Documentation
-        url: https://www.openpolicyagent.org/docs/latest/rest-api/
+      - url: https://www.openpolicyagent.org/docs/latest/rest-api/#policy-api
+        type: Documentation
+    description: Manage policy loaded into the OPA instance.
+  - aid: open-policy-agent:data-api
+    name: Data API
+    tags:
+      - API
+    humanURL: https://www.openpolicyagent.org/docs/latest/rest-api/#data-api
+    properties:
+      - url: https://www.openpolicyagent.org/docs/latest/rest-api/#data-api
+        type: Documentation
+    description: Evaluate rules and retrieve data.
+  - aid: open-policy-agent:query-api
+    name: Query API
+    tags:
+      - API
+    humanURL: https://www.openpolicyagent.org/docs/latest/rest-api/#query-api
+    properties:
+      - url: https://www.openpolicyagent.org/docs/latest/rest-api/#query-api
+        type: Documentation
+    description: Execute adhoc queries.
+  - aid: open-policy-agent:compile-api
+    name: Compile API
+    tags:
+      - API
+    humanURL: https://www.openpolicyagent.org/docs/latest/rest-api/#compile-api
+    properties:
+      - url: https://www.openpolicyagent.org/docs/latest/rest-api/#compile-api
+        type: Documentation
+    description: Access Regos Partial Evaluation functionality.
+  - aid: open-policy-agent:health-api
+    name: Health API
+    tags:
+      - API
+    humanURL: https://www.openpolicyagent.org/docs/latest/rest-api/#health-api
+    properties:
+      - url: https://www.openpolicyagent.org/docs/latest/rest-api/#health-api
+        type: Documentation
+    description: Access instance operational health information.
+  - aid: open-policy-agent:config-api
+    name: Config API
+    tags:
+      - API
+    humanURL: https://www.openpolicyagent.org/docs/latest/rest-api/#config-api
+    properties:
+      - url: https://www.openpolicyagent.org/docs/latest/rest-api/#config-api
+        type: Documentation
+    description: View instance configuration.
+  - aid: open-policy-agent:status-api
+    name: Status API
+    tags:
+      - API
+    humanURL: https://www.openpolicyagent.org/docs/latest/rest-api/#status-api
+    properties:
+      - url: https://www.openpolicyagent.org/docs/latest/rest-api/#status-api
+        type: Documentation
+    description: View instance status state.
+name: Open Policy Agent
+tags:
+  - Policies
+  - Standards
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+access: 3rd-Party
+created: '2024-11-18T00:00:00.000Z'
+modified: '2024-11-17'
+position: Consumer
+description: >-
+  Stop using a different policy language, policy model, and policy API for every
+  product and service you use. Use OPA for a unified toolset and framework for
+  policy across the cloud native stack. Whether for one service or for all your
+  services, use OPA to decouple policy from the service's code so you can
+  release, analyze, and review policies (which security and compliance teams
+  love) without sacrificing availability or performance.
 maintainers:
   - FN: Kin Lane
     email: info@apievangelist.com
+specificationVersion: '0.19'
