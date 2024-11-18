@@ -12,6 +12,10 @@ apis:
         type: Documentation
       - url: properties/policy-api.yml
         type: OpenAPI
+      - url: policy/bruno.json
+        type: BrunoCollection
+      - url: https://api-evangelist.postman.co/workspace/Open-Policy-Agent~bcc99d6c-728a-4d86-83fd-b6495f5e8fb8/collection/35240-19ce2c88-97b8-4f58-a101-b8be70794a85
+        type: PostmanCollection                   
     description: API for managing policy modules, allowing CRUD operations.
   - aid: open-policy-agent:data-api
     name: Data API
@@ -24,6 +28,10 @@ apis:
         type: Documentation
       - url: properties/data-api.yml
         type: OpenAPI
+      - url: data/bruno.json
+        type: BrunoCollection 
+      - url: https://api-evangelist.postman.co/workspace/Open-Policy-Agent~bcc99d6c-728a-4d86-83fd-b6495f5e8fb8/collection/35240-96c58dc4-3514-48ee-a35f-a9c2aeb14fa0
+        type: PostmanCollection                    
     description: API for reading and writing documents in OPA (Open Policy Agent).
   - aid: open-policy-agent:query-api
     name: Query API
@@ -35,6 +43,10 @@ apis:
         type: Documentation
       - url: properties/query-api.yml
         type: OpenAPI
+      - url: query/bruno.json
+        type: BrunoCollection    
+      - url: https://api-evangelist.postman.co/workspace/Open-Policy-Agent~bcc99d6c-728a-4d86-83fd-b6495f5e8fb8/collection/35240-9170dd84-c3d5-45a4-9efc-9ef6ab30744e
+        type: PostmanCollection                 
     description: API for executing simple and ad-hoc queries in OPA (Open Policy Agent).
   - aid: open-policy-agent:compile-api
     name: Compile API
@@ -47,6 +59,10 @@ apis:
         type: Documentation
       - url: properties/compile-api.yml
         type: OpenAPI
+      - url: compile/bruno.json
+        type: BrunoCollection 
+      - url: https://api-evangelist.postman.co/workspace/Open-Policy-Agent~bcc99d6c-728a-4d86-83fd-b6495f5e8fb8/collection/35240-1e1d8e0e-7157-4b7f-99cf-611fa56a0c3c
+        type: PostmanCollection                   
     description: API for partially evaluating Rego queries in OPA (Open Policy Agent).
   - aid: open-policy-agent:health-api
     name: Health API
@@ -59,6 +75,10 @@ apis:
         type: Documentation
       - url: properties/health-api.yml
         type: OpenAPI
+      - url: health/bruno.json
+        type: BrunoCollection   
+      - url: https://api-evangelist.postman.co/workspace/Open-Policy-Agent~bcc99d6c-728a-4d86-83fd-b6495f5e8fb8/collection/35240-198cdb4f-e1d1-44c4-aa1f-ef8f66760d1a
+        type: PostmanCollection                  
     description: >-
       API for checking the health and readiness of an OPA (Open Policy Agent)
       server.
@@ -72,6 +92,10 @@ apis:
         type: Documentation
       - url: properties/config-api.yml
         type: OpenAPI
+      - url: config/bruno.json
+        type: BrunoCollection  
+      - url: https://api-evangelist.postman.co/workspace/Open-Policy-Agent~bcc99d6c-728a-4d86-83fd-b6495f5e8fb8/collection/35240-979cbaf7-8515-4fd2-8035-134685590967
+        type: PostmanCollection                   
     description: >-
       API for retrieving OPA's active configuration, including discovered
       configurations.
@@ -85,6 +109,10 @@ apis:
         type: Documentation
       - url: properties/status-api.yml
         type: OpenAPI
+      - url: status/bruno.json
+        type: BrunoCollection 
+      - url: https://api-evangelist.postman.co/workspace/Open-Policy-Agent~bcc99d6c-728a-4d86-83fd-b6495f5e8fb8/collection/35240-b4943ca3-d651-4c68-a003-e6ca7feace03
+        type: PostmanCollection                    
     description: >-
       API for accessing OPA (Open Policy Agent) status information via a
       pull-based mechanism.
@@ -110,12 +138,18 @@ maintainers:
     email: info@apievangelist.com
 specificationVersion: '0.19'
 common:
-  - name: Open Policy Agent | REST API
+  - name: Documentation
     url: https://www.openpolicyagent.org/docs/latest/rest-api/
     type: Documentation
-  - name: Open Policy Agent | REST API
+  - name: Authentication
     url: https://www.openpolicyagent.org/docs/latest/rest-api/#authentication
     type: Authentication
-  - name: Open Policy Agent | REST API
+  - name: Errors
     url: https://www.openpolicyagent.org/docs/latest/rest-api/#errors
     type: Errors
+  - name: Postman Workspace
+    url: https://www.postman.com/api-evangelist/open-policy-agent/overview
+    type: PostmanWorkspace    
+  - name: GitHub Repository
+    url: https://github.com/api-search/open-policy-agent
+    type: GitHubRepository      
