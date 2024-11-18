@@ -10,8 +10,8 @@ apis:
     properties:
       - url: https://www.openpolicyagent.org/docs/latest/rest-api/#policy-api
         type: Documentation
-      - type: OpenAPI
-        url: properties/policy-api.yml
+      - url: properties/policy-api.yml
+        type: OpenAPI
     description: API for managing policy modules, allowing CRUD operations.
   - aid: open-policy-agent:data-api
     name: Data API
