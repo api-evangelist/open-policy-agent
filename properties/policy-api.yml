@@ -1,1 +1,161 @@
-{}
+openapi: 3.1.0
+info:
+  title: Policy API
+  description: API for managing policy modules, allowing CRUD operations.
+  version: 1.0.0
+paths:
+  /v1/policies:
+    get:
+      summary: List Policies
+      description: List all policy modules.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          description: Identifier of the policy module
+                        raw:
+                          type: string
+                          description: Raw policy definition
+                        ast:
+                          type: object
+                          description: Abstract syntax tree (AST) of the policy
+        '500':
+          description: Server error
+  /v1/policies/{id}:
+    get:
+      summary: Get a Policy
+      description: Retrieve a policy module by its ID.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Policy module identifier
+          schema:
+            type: string
+        - name: pretty
+          in: query
+          required: false
+          description: Format response for human readability
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                      raw:
+                        type: string
+                      ast:
+                        type: object
+        '404':
+          description: Policy not found
+        '500':
+          description: Server error
+    put:
+      summary: Create or Update a Policy
+      description: Create or update a policy module.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Policy module identifier
+          schema:
+            type: string
+        - name: pretty
+          in: query
+          required: false
+          description: Format response for human readability
+          schema:
+            type: boolean
+        - name: metrics
+          in: query
+          required: false
+          description: Return compiler performance metrics
+          schema:
+            type: boolean
+      requestBody:
+        description: Raw policy content
+        required: true
+        content:
+          text/plain:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: Policy created or updated successfully
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request (invalid policy)
+        '500':
+          description: Server error
+    delete:
+      summary: Delete a Policy
+      description: Delete a policy module by its ID.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Policy module identifier
+          schema:
+            type: string
+        - name: pretty
+          in: query
+          required: false
+          description: Format response for human readability
+          schema:
+            type: boolean
+        - name: metrics
+          in: query
+          required: false
+          description: Return compiler performance metrics
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: Policy deleted successfully
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request (dependent policies exist)
+        '404':
+          description: Policy not found
+        '500':
+          description: Server error
+components:
+  schemas:
+    Policy:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Identifier of the policy module
+        raw:
+          type: string
+          description: Raw policy definition
+        ast:
+          type: object
+          description: Abstract syntax tree (AST) of the policy
