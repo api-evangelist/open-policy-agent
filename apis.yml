@@ -83,8 +83,8 @@ apis:
     properties:
       - url: https://www.openpolicyagent.org/docs/latest/rest-api/#status-api
         type: Documentation
-      - type: OpenAPI
-        url: properties/status-api.yml
+      - url: properties/status-api.yml
+        type: OpenAPI
     description: >-
       API for accessing OPA (Open Policy Agent) status information via a
       pull-based mechanism.
