@@ -1,0 +1,18 @@
+meta {
+  name: Execute an Ad-hoc Query -GET-
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/v1/query
+  body: none
+  auth: none
+}
+
+params:query {
+  q: 
+  ~pretty: 
+  ~explain: 
+  ~metrics: 
+}

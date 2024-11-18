@@ -1,0 +1,15 @@
+meta {
+  name: Custom Health Check
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/health/:rule-name
+  body: none
+  auth: none
+}
+
+params:path {
+  rule-name: 
+}

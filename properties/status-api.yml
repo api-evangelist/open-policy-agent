@@ -1,0 +1,138 @@
+openapi: 3.1.0
+info:
+  title: Status API
+  description: API for accessing OPA (Open Policy Agent) status information via a pull-based mechanism.
+  version: "1.0.0"
+paths:
+  /v1/status:
+    get:
+      summary: Get OPA Status
+      description: Retrieve OPA's current status information, including labels, bundles, metrics, and plugins.
+      parameters:
+        - name: pretty
+          in: query
+          required: false
+          description: Format response for human readability.
+          schema:
+            type: boolean
+      responses:
+        "200":
+          description: Status information retrieved successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: object
+                    description: Current OPA status.
+                    properties:
+                      labels:
+                        type: object
+                        description: Labels associated with the OPA instance.
+                        properties:
+                          id:
+                            type: string
+                            description: Unique identifier for the instance.
+                          version:
+                            type: string
+                            description: Version of the OPA instance.
+                      bundles:
+                        type: object
+                        description: Status of configured bundles.
+                        additionalProperties:
+                          type: object
+                          properties:
+                            name:
+                              type: string
+                              description: Name of the bundle.
+                            active_revision:
+                              type: string
+                              description: Active revision of the bundle.
+                            last_successful_activation:
+                              type: string
+                              format: date-time
+                              description: Timestamp of the last successful activation.
+                            last_successful_download:
+                              type: string
+                              format: date-time
+                              description: Timestamp of the last successful download.
+                            last_successful_request:
+                              type: string
+                              format: date-time
+                              description: Timestamp of the last successful request.
+                            last_request:
+                              type: string
+                              format: date-time
+                              description: Timestamp of the last request.
+                            metrics:
+                              type: object
+                              description: Metrics associated with the bundle.
+                              additionalProperties:
+                                type: number
+                      metrics:
+                        type: object
+                        description: Metrics for OPA, including those for Prometheus.
+                        additionalProperties:
+                          type: object
+                      plugins:
+                        type: object
+                        description: Status of OPA plugins.
+                        additionalProperties:
+                          type: object
+                          properties:
+                            state:
+                              type: string
+                              description: Current state of the plugin.
+                              example: "OK"
+        "500":
+          description: Internal server error.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Error message indicating the reason for failure.
+      examples:
+        successful_response:
+          summary: Successful Response
+          value:
+            result:
+              labels:
+                id: "7da62ac6-42e0-4b3c-b6d5-199239ad436e"
+                version: "99.9.9-dev"
+              bundles:
+                play:
+                  name: "play"
+                  active_revision: "b3BlbnBvbGljeWFnZW50Lm9yZw=="
+                  last_successful_activation: "2021-12-08T01:36:14.201927Z"
+                  last_successful_download: "2021-12-08T01:36:14.20038Z"
+                  last_successful_request: "2021-12-08T01:36:23.131346Z"
+                  last_request: "2021-12-08T01:36:23.131346Z"
+                  metrics:
+                    timer_bundle_request_ns: 168273779
+              metrics:
+                prometheus: {}
+              plugins:
+                bundle:
+                  state: "OK"
+                decision_logs:
+                  state: "OK"
+                discovery:
+                  state: "OK"
+                status:
+                  state: "OK"
+        server_error_response:
+          summary: Server Error Response
+          value:
+            error: "Internal server error"
+components:
+  schemas:
+    StatusError:
+      type: object
+      properties:
+        error:
+          type: string
+          description: Error message indicating the reason for failure.

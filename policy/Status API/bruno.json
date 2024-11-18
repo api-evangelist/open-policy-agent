@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "Open Policy Agent (OPA) Status API",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

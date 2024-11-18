@@ -1,0 +1,29 @@
+meta {
+  name: Partially Evaluate a Query
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/v1/compile
+  body: json
+  auth: none
+}
+
+params:query {
+  ~pretty: 
+  ~explain: 
+  ~metrics: 
+  ~instrument: 
+}
+
+body:json {
+  {
+    "query": "",
+    "input": {},
+    "options": {
+      "disableInlining": []
+    },
+    "unknowns": []
+  }
+}

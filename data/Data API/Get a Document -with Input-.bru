@@ -1,0 +1,28 @@
+meta {
+  name: Get a Document -with Input-
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/v1/data/:path
+  body: json
+  auth: none
+}
+
+params:query {
+  ~pretty: 
+  ~provenance: 
+  ~explain: 
+  ~metrics: 
+  ~instrument: 
+  ~strict-builtin-errors: 
+}
+
+params:path {
+  path: 
+}
+
+body:json {
+  {}
+}

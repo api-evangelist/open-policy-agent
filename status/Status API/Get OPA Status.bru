@@ -1,0 +1,15 @@
+meta {
+  name: Get OPA Status
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/v1/status
+  body: none
+  auth: none
+}
+
+params:query {
+  ~pretty: 
+}

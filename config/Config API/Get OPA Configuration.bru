@@ -1,0 +1,15 @@
+meta {
+  name: Get OPA Configuration
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/v1/config
+  body: none
+  auth: none
+}
+
+params:query {
+  ~pretty: 
+}

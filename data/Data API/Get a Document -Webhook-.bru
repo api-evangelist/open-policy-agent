@@ -1,0 +1,23 @@
+meta {
+  name: Get a Document -Webhook-
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{baseUrl}}/v0/data/:path
+  body: json
+  auth: none
+}
+
+params:query {
+  ~pretty: 
+}
+
+params:path {
+  path: 
+}
+
+body:json {
+  {}
+}
