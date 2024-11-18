@@ -1,6 +1,6 @@
+---
 aid: open-policy-agent
-url: >-
-  https://raw.githubusercontent.com/api-search/open-policy-agent/refs/heads/main/apis.yml
+url: https://raw.githubusercontent.com/api-search/open-policy-agent/refs/heads/main/apis.yml
 apis:
   - aid: open-policy-agent:policy-api
     name: Policy API
@@ -37,7 +37,7 @@ apis:
     properties:
       - url: https://www.openpolicyagent.org/docs/latest/rest-api/#compile-api
         type: Documentation
-    description: Access Regos Partial Evaluation functionality.
+    description: "Access Rego\x19s Partial Evaluation functionality."
   - aid: open-policy-agent:health-api
     name: Health API
     tags:
@@ -72,17 +72,16 @@ tags:
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
-created: '2024-11-18T00:00:00.000Z'
-modified: '2024-11-17'
+created: 2024-11-18T00:00:00.000Z
+modified: 2024-11-17
 position: Consumer
-description: >-
-  Stop using a different policy language, policy model, and policy API for every
-  product and service you use. Use OPA for a unified toolset and framework for
-  policy across the cloud native stack. Whether for one service or for all your
-  services, use OPA to decouple policy from the service's code so you can
-  release, analyze, and review policies (which security and compliance teams
-  love) without sacrificing availability or performance.
+description: Stop using a different policy language, policy model, and policy
+  API for every product and service you use. Use OPA for a unified toolset and
+  framework for policy across the cloud native stack. Whether for one service or
+  for all your services, use OPA to decouple policy from the service's code so
+  you can release, analyze, and review policies (which security and compliance
+  teams love) without sacrificing availability or performance.
 maintainers:
   - FN: Kin Lane
     email: info@apievangelist.com
-specificationVersion: '0.19'
+specificationVersion: "0.19"
