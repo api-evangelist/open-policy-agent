@@ -51,12 +51,17 @@ apis:
   - aid: open-policy-agent:health-api
     name: Health API
     tags:
-      - API
+      - Health
+      - Availability
     humanURL: https://www.openpolicyagent.org/docs/latest/rest-api/#health-api
     properties:
       - url: https://www.openpolicyagent.org/docs/latest/rest-api/#health-api
         type: Documentation
-    description: Access instance operational health information.
+      - type: OpenAPI
+        url: properties/health-api.yml
+    description: >-
+      API for checking the health and readiness of an OPA (Open Policy Agent)
+      server.
   - aid: open-policy-agent:config-api
     name: Config API
     tags:
