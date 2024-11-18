@@ -39,12 +39,15 @@ apis:
   - aid: open-policy-agent:compile-api
     name: Compile API
     tags:
-      - API
+      - Compile
+      - Evaluation
     humanURL: https://www.openpolicyagent.org/docs/latest/rest-api/#compile-api
     properties:
       - url: https://www.openpolicyagent.org/docs/latest/rest-api/#compile-api
         type: Documentation
-    description: "Access Rego\x19s Partial Evaluation functionality."
+      - type: OpenAPI
+        url: properties/compile-api.yml
+    description: API for partially evaluating Rego queries in OPA (Open Policy Agent).
   - aid: open-policy-agent:health-api
     name: Health API
     tags:
