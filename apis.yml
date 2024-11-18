@@ -78,12 +78,16 @@ apis:
   - aid: open-policy-agent:status-api
     name: Status API
     tags:
-      - API
+      - Status
     humanURL: https://www.openpolicyagent.org/docs/latest/rest-api/#status-api
     properties:
       - url: https://www.openpolicyagent.org/docs/latest/rest-api/#status-api
         type: Documentation
-    description: View instance status state.
+      - type: OpenAPI
+        url: properties/status-api.yml
+    description: >-
+      API for accessing OPA (Open Policy Agent) status information via a
+      pull-based mechanism.
 name: Open Policy Agent
 tags:
   - Policies
