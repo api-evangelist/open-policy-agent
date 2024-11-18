@@ -22,8 +22,8 @@ apis:
     properties:
       - url: https://www.openpolicyagent.org/docs/latest/rest-api/#data-api
         type: Documentation
-      - type: OpenAPI
-        url: properties/data-api.yml
+      - url: properties/data-api.yml
+        type: OpenAPI
     description: API for reading and writing documents in OPA (Open Policy Agent).
   - aid: open-policy-agent:query-api
     name: Query API
