@@ -1,4 +1,4 @@
-executed: '2024-11-18T01:50:56.583Z'
+executed: '2024-11-18T14:23:35.040Z'
 results:
   - code: openapi-external-docs-error
     message: OpenAPI MUST Have External Documentation
@@ -9,8 +9,8 @@ results:
         line: 0
         character: 0
       end:
-        line: 160
-        character: 63
+        line: 141
+        character: 71
   - code: openapi-tags-object-error
     message: OpenAPIs MUST Have a Tag Object
     path: []
@@ -20,8 +20,8 @@ results:
         line: 0
         character: 0
       end:
-        line: 160
-        character: 63
+        line: 141
+        character: 71
   - code: openapi-info-contact-error
     message: Info MUST Have Contact Object
     path:
@@ -32,7 +32,7 @@ results:
         line: 1
         character: 5
       end:
-        line: 4
+        line: 6
         character: 16
   - code: openapi-info-license-error
     message: Info MUST Have License
@@ -44,7 +44,7 @@ results:
         line: 1
         character: 5
       end:
-        line: 4
+        line: 6
         character: 16
   - code: openapi-info-terms-of-service-error
     message: Info MUST Have Terms of Service
@@ -56,7 +56,7 @@ results:
         line: 1
         character: 5
       end:
-        line: 4
+        line: 6
         character: 16
   - code: openapi-info-title-info
     message: Info Has Title
@@ -95,8 +95,8 @@ results:
         line: 3
         character: 15
       end:
-        line: 3
-        character: 73
+        line: 5
+        character: 25
   - code: openapi-info-version-info
     message: Info Has Version
     path:
@@ -105,620 +105,248 @@ results:
     severity: 2
     range:
       start:
-        line: 4
+        line: 6
         character: 11
       end:
-        line: 4
+        line: 6
         character: 16
   - code: openapi-no-api-in-path-error
     message: No API in Path
     path:
       - paths
-      - /v1/policies
+      - /v1/status
     severity: 0
     range:
       start:
-        line: 6
-        character: 15
+        line: 8
+        character: 13
       end:
-        line: 33
-        character: 35
+        line: 133
+        character: 40
   - code: openapi-no-path-trailing-slash-info
     message: Path Trailing Slash
     path:
       - paths
-      - /v1/policies
+      - /v1/status
     severity: 2
     range:
       start:
-        line: 6
-        character: 15
+        line: 8
+        character: 13
       end:
-        line: 33
-        character: 35
+        line: 133
+        character: 40
   - code: openapi-version-in-path-error
     message: Version in Path
     path:
       - paths
-      - /v1/policies
+      - /v1/status
     severity: 0
     range:
       start:
-        line: 6
-        character: 15
+        line: 8
+        character: 13
       end:
-        line: 33
-        character: 35
+        line: 133
+        character: 40
   - code: openapi-no-request-body-on-get-info
     message: GET Request Body
     path:
       - paths
-      - /v1/policies
+      - /v1/status
       - get
     severity: 2
     range:
       start:
-        line: 7
+        line: 9
         character: 8
       end:
-        line: 33
-        character: 35
+        line: 133
+        character: 40
   - code: openapi-operation-security-definitions-error
     message: Operations MUST Have a Security Definition
     path:
       - paths
-      - /v1/policies
+      - /v1/status
       - get
     severity: 0
     range:
       start:
-        line: 7
+        line: 9
         character: 8
       end:
-        line: 33
-        character: 35
+        line: 133
+        character: 40
   - code: openapi-operations-operation-ids-error
     message: Operation MUST Have Identifier
     path:
       - paths
-      - /v1/policies
+      - /v1/status
       - get
     severity: 0
     range:
       start:
-        line: 7
+        line: 9
         character: 8
       end:
-        line: 33
-        character: 35
+        line: 133
+        character: 40
   - code: openapi-operations-tags-error
     message: Operations MUST Have Tags
     path:
       - paths
-      - /v1/policies
+      - /v1/status
       - get
     severity: 0
     range:
       start:
-        line: 7
+        line: 9
         character: 8
       end:
-        line: 33
-        character: 35
+        line: 133
+        character: 40
   - code: openapi-operations-summary-info
     message: Operation Has a Summary
     path:
       - paths
-      - /v1/policies
+      - /v1/status
       - get
       - summary
     severity: 2
     range:
       start:
-        line: 8
+        line: 10
         character: 15
       end:
-        line: 8
-        character: 28
+        line: 10
+        character: 29
   - code: openapi-operations-summary-period-none-info
     message: Operation Has a Period.
     path:
       - paths
-      - /v1/policies
+      - /v1/status
       - get
       - summary
     severity: 2
     range:
       start:
-        line: 8
+        line: 10
         character: 15
       end:
-        line: 8
-        character: 28
+        line: 10
+        character: 29
   - code: openapi-operations-description-info
     message: Operation Has Description
     path:
       - paths
-      - /v1/policies
+      - /v1/status
       - get
       - description
-    severity: 2
-    range:
-      start:
-        line: 9
-        character: 19
-      end:
-        line: 9
-        character: 43
-  - code: openapi-response-get-400-status-code-error
-    message: GET Responses MUST Have 400 Status Codes
-    path:
-      - paths
-      - /v1/policies
-      - get
-      - responses
-    severity: 0
-    range:
-      start:
-        line: 10
-        character: 16
-      end:
-        line: 33
-        character: 35
-  - code: openapi-response-get-401-status-code-error
-    message: GET Responses Has 401 Status Code
-    path:
-      - paths
-      - /v1/policies
-      - get
-      - responses
-    severity: 0
-    range:
-      start:
-        line: 10
-        character: 16
-      end:
-        line: 33
-        character: 35
-  - code: openapi-response-get-403-status-code-error
-    message: GET Responses Has 403 Status Code
-    path:
-      - paths
-      - /v1/policies
-      - get
-      - responses
-    severity: 0
-    range:
-      start:
-        line: 10
-        character: 16
-      end:
-        line: 33
-        character: 35
-  - code: openapi-response-get-429-status-code-error
-    message: GET Responses Has 429 Status Code
-    path:
-      - paths
-      - /v1/policies
-      - get
-      - responses
-    severity: 0
-    range:
-      start:
-        line: 10
-        character: 16
-      end:
-        line: 33
-        character: 35
-  - code: openapi-response-get-200-status-code-info
-    message: GET Responses Has 200 Status Codes
-    path:
-      - paths
-      - /v1/policies
-      - get
-      - responses
-      - '200'
     severity: 2
     range:
       start:
         line: 11
-        character: 14
-      end:
-        line: 31
-        character: 79
-  - code: openapi-response-get-200-description-info
-    message: GET 200 Response has description.
-    path:
-      - paths
-      - /v1/policies
-      - get
-      - responses
-      - '200'
-      - description
-    severity: 2
-    range:
-      start:
-        line: 12
-        character: 23
-      end:
-        line: 12
-        character: 42
-  - code: openapi-response-get-200-content-info
-    message: GET 200 Response Has Content.
-    path:
-      - paths
-      - /v1/policies
-      - get
-      - responses
-      - '200'
-      - content
-    severity: 2
-    range:
-      start:
-        line: 13
-        character: 18
-      end:
-        line: 31
-        character: 79
-  - code: openapi-response-get-200-media-type-examples-error
-    message: GET 200 Response MUST Have Examples
-    path:
-      - paths
-      - /v1/policies
-      - get
-      - responses
-      - '200'
-      - content
-      - application/json
-    severity: 0
-    range:
-      start:
-        line: 14
-        character: 29
-      end:
-        line: 31
-        character: 79
-  - code: openapi-response-get-200-media-type-info
-    message: GET 200 Response Has Media Type.
-    path:
-      - paths
-      - /v1/policies
-      - get
-      - responses
-      - '200'
-      - content
-      - application/json
-    severity: 2
-    range:
-      start:
-        line: 14
-        character: 29
-      end:
-        line: 31
-        character: 79
-  - code: openapi-response-get-200-media-type-schema-info
-    message: GET 200 Response Has Schema
-    path:
-      - paths
-      - /v1/policies
-      - get
-      - responses
-      - '200'
-      - content
-      - application/json
-      - schema
-    severity: 2
-    range:
-      start:
-        line: 15
-        character: 21
-      end:
-        line: 31
-        character: 79
-  - code: openapi-response-get-200-media-type-schema-ref-info
-    message: GET 200 Responses Uses Schema Reference
-    path:
-      - paths
-      - /v1/policies
-      - get
-      - responses
-      - '200'
-      - content
-      - application/json
-      - schema
-    severity: 2
-    range:
-      start:
-        line: 15
-        character: 21
-      end:
-        line: 31
-        character: 79
-  - code: openapi-response-get-500-schema-ref-info
-    message: GET 500 Responses Uses Schema Reference
-    path:
-      - paths
-      - /v1/policies
-      - get
-      - responses
-      - '500'
-    severity: 2
-    range:
-      start:
-        line: 32
-        character: 14
-      end:
-        line: 33
-        character: 35
-  - code: openapi-response-get-500-status-code-info
-    message: GET Responses Has 500 Status Code
-    path:
-      - paths
-      - /v1/policies
-      - get
-      - responses
-      - '500'
-    severity: 2
-    range:
-      start:
-        line: 32
-        character: 14
-      end:
-        line: 33
-        character: 35
-  - code: openapi-no-api-in-path-error
-    message: No API in Path
-    path:
-      - paths
-      - /v1/policies/{id}
-    severity: 0
-    range:
-      start:
-        line: 34
-        character: 20
-      end:
-        line: 146
-        character: 35
-  - code: openapi-no-path-trailing-slash-info
-    message: Path Trailing Slash
-    path:
-      - paths
-      - /v1/policies/{id}
-    severity: 2
-    range:
-      start:
-        line: 34
-        character: 20
-      end:
-        line: 146
-        character: 35
-  - code: openapi-version-in-path-error
-    message: Version in Path
-    path:
-      - paths
-      - /v1/policies/{id}
-    severity: 0
-    range:
-      start:
-        line: 34
-        character: 20
-      end:
-        line: 146
-        character: 35
-  - code: openapi-no-request-body-on-get-info
-    message: GET Request Body
-    path:
-      - paths
-      - /v1/policies/{id}
-      - get
-    severity: 2
-    range:
-      start:
-        line: 35
-        character: 8
-      end:
-        line: 71
-        character: 35
-  - code: openapi-operation-security-definitions-error
-    message: Operations MUST Have a Security Definition
-    path:
-      - paths
-      - /v1/policies/{id}
-      - get
-    severity: 0
-    range:
-      start:
-        line: 35
-        character: 8
-      end:
-        line: 71
-        character: 35
-  - code: openapi-operations-operation-ids-error
-    message: Operation MUST Have Identifier
-    path:
-      - paths
-      - /v1/policies/{id}
-      - get
-    severity: 0
-    range:
-      start:
-        line: 35
-        character: 8
-      end:
-        line: 71
-        character: 35
-  - code: openapi-operations-tags-error
-    message: Operations MUST Have Tags
-    path:
-      - paths
-      - /v1/policies/{id}
-      - get
-    severity: 0
-    range:
-      start:
-        line: 35
-        character: 8
-      end:
-        line: 71
-        character: 35
-  - code: openapi-operations-summary-info
-    message: Operation Has a Summary
-    path:
-      - paths
-      - /v1/policies/{id}
-      - get
-      - summary
-    severity: 2
-    range:
-      start:
-        line: 36
-        character: 15
-      end:
-        line: 36
-        character: 27
-  - code: openapi-operations-summary-period-none-info
-    message: Operation Has a Period.
-    path:
-      - paths
-      - /v1/policies/{id}
-      - get
-      - summary
-    severity: 2
-    range:
-      start:
-        line: 36
-        character: 15
-      end:
-        line: 36
-        character: 27
-  - code: openapi-operations-description-info
-    message: Operation Has Description
-    path:
-      - paths
-      - /v1/policies/{id}
-      - get
-      - description
-    severity: 2
-    range:
-      start:
-        line: 37
         character: 19
       end:
-        line: 37
-        character: 54
+        line: 13
+        character: 29
   - code: openapi-parameters-componentized-error
     message: Parameters MUST use components $ref.
     path:
       - paths
-      - /v1/policies/{id}
+      - /v1/status
       - get
       - parameters
       - '0'
     severity: 0
     range:
       start:
-        line: 39
+        line: 15
         character: 10
       end:
-        line: 44
-        character: 24
-  - code: openapi-parameters-componentized-error
-    message: Parameters MUST use components $ref.
-    path:
-      - paths
-      - /v1/policies/{id}
-      - get
-      - parameters
-      - '1'
-    severity: 0
-    range:
-      start:
-        line: 45
-        character: 10
-      end:
-        line: 50
+        line: 20
         character: 25
   - code: openapi-response-get-400-status-code-error
     message: GET Responses MUST Have 400 Status Codes
     path:
       - paths
-      - /v1/policies/{id}
+      - /v1/status
       - get
       - responses
     severity: 0
     range:
       start:
-        line: 51
+        line: 21
         character: 16
       end:
-        line: 71
-        character: 35
+        line: 100
+        character: 81
   - code: openapi-response-get-401-status-code-error
     message: GET Responses Has 401 Status Code
     path:
       - paths
-      - /v1/policies/{id}
+      - /v1/status
       - get
       - responses
     severity: 0
     range:
       start:
-        line: 51
+        line: 21
         character: 16
       end:
-        line: 71
-        character: 35
+        line: 100
+        character: 81
   - code: openapi-response-get-403-status-code-error
     message: GET Responses Has 403 Status Code
     path:
       - paths
-      - /v1/policies/{id}
+      - /v1/status
       - get
       - responses
     severity: 0
     range:
       start:
-        line: 51
+        line: 21
         character: 16
       end:
-        line: 71
-        character: 35
+        line: 100
+        character: 81
   - code: openapi-response-get-429-status-code-error
     message: GET Responses Has 429 Status Code
     path:
       - paths
-      - /v1/policies/{id}
+      - /v1/status
       - get
       - responses
     severity: 0
     range:
       start:
-        line: 51
+        line: 21
         character: 16
       end:
-        line: 71
-        character: 35
+        line: 100
+        character: 81
   - code: openapi-response-get-200-status-code-info
     message: GET Responses Has 200 Status Codes
     path:
       - paths
-      - /v1/policies/{id}
+      - /v1/status
       - get
       - responses
       - '200'
     severity: 2
     range:
       start:
-        line: 52
+        line: 22
         character: 14
       end:
-        line: 67
-        character: 36
+        line: 90
+        character: 41
   - code: openapi-response-get-200-description-info
     message: GET 200 Response has description.
     path:
       - paths
-      - /v1/policies/{id}
+      - /v1/status
       - get
       - responses
       - '200'
@@ -726,16 +354,16 @@ results:
     severity: 2
     range:
       start:
-        line: 53
+        line: 23
         character: 23
       end:
-        line: 53
-        character: 42
+        line: 23
+        character: 65
   - code: openapi-response-get-200-content-info
     message: GET 200 Response Has Content.
     path:
       - paths
-      - /v1/policies/{id}
+      - /v1/status
       - get
       - responses
       - '200'
@@ -743,16 +371,16 @@ results:
     severity: 2
     range:
       start:
-        line: 54
+        line: 24
         character: 18
       end:
-        line: 67
-        character: 36
+        line: 90
+        character: 41
   - code: openapi-response-get-200-media-type-examples-error
     message: GET 200 Response MUST Have Examples
     path:
       - paths
-      - /v1/policies/{id}
+      - /v1/status
       - get
       - responses
       - '200'
@@ -761,16 +389,16 @@ results:
     severity: 0
     range:
       start:
-        line: 55
+        line: 25
         character: 29
       end:
-        line: 67
-        character: 36
+        line: 90
+        character: 41
   - code: openapi-response-get-200-media-type-info
     message: GET 200 Response Has Media Type.
     path:
       - paths
-      - /v1/policies/{id}
+      - /v1/status
       - get
       - responses
       - '200'
@@ -779,16 +407,16 @@ results:
     severity: 2
     range:
       start:
-        line: 55
+        line: 25
         character: 29
       end:
-        line: 67
-        character: 36
+        line: 90
+        character: 41
   - code: openapi-response-get-200-media-type-schema-info
     message: GET 200 Response Has Schema
     path:
       - paths
-      - /v1/policies/{id}
+      - /v1/status
       - get
       - responses
       - '200'
@@ -798,16 +426,16 @@ results:
     severity: 2
     range:
       start:
-        line: 56
+        line: 26
         character: 21
       end:
-        line: 67
-        character: 36
+        line: 90
+        character: 41
   - code: openapi-response-get-200-media-type-schema-ref-info
     message: GET 200 Responses Uses Schema Reference
     path:
       - paths
-      - /v1/policies/{id}
+      - /v1/status
       - get
       - responses
       - '200'
@@ -817,722 +445,43 @@ results:
     severity: 2
     range:
       start:
-        line: 56
+        line: 26
         character: 21
       end:
-        line: 67
-        character: 36
-  - code: openapi-response-get-404-schema-ref-info
-    message: GET 404 Responses Uses Schema Reference
-    path:
-      - paths
-      - /v1/policies/{id}
-      - get
-      - responses
-      - '404'
-    severity: 2
-    range:
-      start:
-        line: 68
-        character: 14
-      end:
-        line: 69
-        character: 39
+        line: 90
+        character: 41
   - code: openapi-response-get-500-schema-ref-info
     message: GET 500 Responses Uses Schema Reference
     path:
       - paths
-      - /v1/policies/{id}
+      - /v1/status
       - get
       - responses
       - '500'
     severity: 2
     range:
       start:
-        line: 70
+        line: 91
         character: 14
       end:
-        line: 71
-        character: 35
+        line: 100
+        character: 81
   - code: openapi-response-get-500-status-code-info
     message: GET Responses Has 500 Status Code
     path:
       - paths
-      - /v1/policies/{id}
+      - /v1/status
       - get
       - responses
       - '500'
     severity: 2
     range:
       start:
-        line: 70
+        line: 91
         character: 14
-      end:
-        line: 71
-        character: 35
-  - code: openapi-operation-security-definitions-error
-    message: Operations MUST Have a Security Definition
-    path:
-      - paths
-      - /v1/policies/{id}
-      - put
-    severity: 0
-    range:
-      start:
-        line: 72
-        character: 8
-      end:
-        line: 111
-        character: 35
-  - code: openapi-operations-operation-ids-error
-    message: Operation MUST Have Identifier
-    path:
-      - paths
-      - /v1/policies/{id}
-      - put
-    severity: 0
-    range:
-      start:
-        line: 72
-        character: 8
-      end:
-        line: 111
-        character: 35
-  - code: openapi-operations-tags-error
-    message: Operations MUST Have Tags
-    path:
-      - paths
-      - /v1/policies/{id}
-      - put
-    severity: 0
-    range:
-      start:
-        line: 72
-        character: 8
-      end:
-        line: 111
-        character: 35
-  - code: openapi-operations-summary-info
-    message: Operation Has a Summary
-    path:
-      - paths
-      - /v1/policies/{id}
-      - put
-      - summary
-    severity: 2
-    range:
-      start:
-        line: 73
-        character: 15
-      end:
-        line: 73
-        character: 40
-  - code: openapi-operations-summary-period-none-info
-    message: Operation Has a Period.
-    path:
-      - paths
-      - /v1/policies/{id}
-      - put
-      - summary
-    severity: 2
-    range:
-      start:
-        line: 73
-        character: 15
-      end:
-        line: 73
-        character: 40
-  - code: openapi-operations-description-info
-    message: Operation Has Description
-    path:
-      - paths
-      - /v1/policies/{id}
-      - put
-      - description
-    severity: 2
-    range:
-      start:
-        line: 74
-        character: 19
-      end:
-        line: 74
-        character: 52
-  - code: openapi-parameters-componentized-error
-    message: Parameters MUST use components $ref.
-    path:
-      - paths
-      - /v1/policies/{id}
-      - put
-      - parameters
-      - '0'
-    severity: 0
-    range:
-      start:
-        line: 76
-        character: 10
-      end:
-        line: 81
-        character: 24
-  - code: openapi-parameters-componentized-error
-    message: Parameters MUST use components $ref.
-    path:
-      - paths
-      - /v1/policies/{id}
-      - put
-      - parameters
-      - '1'
-    severity: 0
-    range:
-      start:
-        line: 82
-        character: 10
-      end:
-        line: 87
-        character: 25
-  - code: openapi-parameters-componentized-error
-    message: Parameters MUST use components $ref.
-    path:
-      - paths
-      - /v1/policies/{id}
-      - put
-      - parameters
-      - '2'
-    severity: 0
-    range:
-      start:
-        line: 88
-        character: 10
-      end:
-        line: 93
-        character: 25
-  - code: openapi-request-body-on-put-info
-    message: PUT Requests Has a Body
-    path:
-      - paths
-      - /v1/policies/{id}
-      - put
-      - requestBody
-    severity: 0
-    range:
-      start:
-        line: 94
-        character: 18
       end:
         line: 100
-        character: 26
-  - code: openapi-request-body-content-on-put-info
-    message: Request Body Content PUT
-    path:
-      - paths
-      - /v1/policies/{id}
-      - put
-      - requestBody
-      - content
-    severity: 2
-    range:
-      start:
-        line: 97
-        character: 16
-      end:
-        line: 100
-        character: 26
-  - code: openapi-request-body-have-examples-error
-    message: Request Bodies MUST Have Examples
-    path:
-      - paths
-      - /v1/policies/{id}
-      - put
-      - requestBody
-      - content
-      - text/plain
-    severity: 0
-    range:
-      start:
-        line: 98
-        character: 21
-      end:
-        line: 100
-        character: 26
-  - code: openapi-request-body-have-schema-info
-    message: Request Body Schema
-    path:
-      - paths
-      - /v1/policies/{id}
-      - put
-      - requestBody
-      - content
-      - text/plain
-      - schema
-    severity: 2
-    range:
-      start:
-        line: 99
-        character: 19
-      end:
-        line: 100
-        character: 26
-  - code: openapi-request-body-have-schema-ref-info
-    message: Request Bodies Use Schema Reference
-    path:
-      - paths
-      - /v1/policies/{id}
-      - put
-      - requestBody
-      - content
-      - text/plain
-      - schema
-    severity: 2
-    range:
-      start:
-        line: 99
-        character: 19
-      end:
-        line: 100
-        character: 26
-  - code: openapi-response-put-204-status-code-error
-    message: PUT 204 Status Code
-    path:
-      - paths
-      - /v1/policies/{id}
-      - put
-      - responses
-    severity: 0
-    range:
-      start:
-        line: 101
-        character: 16
-      end:
-        line: 111
-        character: 35
-  - code: openapi-response-put-401-status-code-error
-    message: PUT Responses MUST 401 Status Codes
-    path:
-      - paths
-      - /v1/policies/{id}
-      - put
-      - responses
-    severity: 0
-    range:
-      start:
-        line: 101
-        character: 16
-      end:
-        line: 111
-        character: 35
-  - code: openapi-response-put-403-status-code-error
-    message: PUT Responses MUST Have 403 Status Codes
-    path:
-      - paths
-      - /v1/policies/{id}
-      - put
-      - responses
-    severity: 0
-    range:
-      start:
-        line: 101
-        character: 16
-      end:
-        line: 111
-        character: 35
-  - code: openapi-response-put-404-status-code-error
-    message: PUT Responses MUST Have 404 Status Codes
-    path:
-      - paths
-      - /v1/policies/{id}
-      - put
-      - responses
-    severity: 0
-    range:
-      start:
-        line: 101
-        character: 16
-      end:
-        line: 111
-        character: 35
-  - code: openapi-response-put-429-status-code-error
-    message: PUT Responses MUST Have 429 Status Codes
-    path:
-      - paths
-      - /v1/policies/{id}
-      - put
-      - responses
-    severity: 0
-    range:
-      start:
-        line: 101
-        character: 16
-      end:
-        line: 111
-        character: 35
-  - code: openapi-response-put-400-schema-ref-info
-    message: PUT 400 Responses Uses Schema Reference
-    path:
-      - paths
-      - /v1/policies/{id}
-      - put
-      - responses
-      - '400'
-    severity: 2
-    range:
-      start:
-        line: 108
-        character: 14
-      end:
-        line: 109
-        character: 51
-  - code: openapi-response-put-400-status-code-info
-    message: PUT Responses Has 400 Status Codes
-    path:
-      - paths
-      - /v1/policies/{id}
-      - put
-      - responses
-      - '400'
-    severity: 2
-    range:
-      start:
-        line: 108
-        character: 14
-      end:
-        line: 109
-        character: 51
-  - code: openapi-response-put-500-schema-ref-info
-    message: PUT 500 Responses Uses Schema Reference
-    path:
-      - paths
-      - /v1/policies/{id}
-      - put
-      - responses
-      - '500'
-    severity: 2
-    range:
-      start:
-        line: 110
-        character: 14
-      end:
-        line: 111
-        character: 35
-  - code: openapi-response-put-500-status-code-info
-    message: PUT Responses Has 500 Status Codes
-    path:
-      - paths
-      - /v1/policies/{id}
-      - put
-      - responses
-      - '500'
-    severity: 2
-    range:
-      start:
-        line: 110
-        character: 14
-      end:
-        line: 111
-        character: 35
-  - code: openapi-no-request-body-on-delete-info
-    message: DELETE Request Body
-    path:
-      - paths
-      - /v1/policies/{id}
-      - delete
-    severity: 2
-    range:
-      start:
-        line: 112
-        character: 11
-      end:
-        line: 146
-        character: 35
-  - code: openapi-operation-security-definitions-error
-    message: Operations MUST Have a Security Definition
-    path:
-      - paths
-      - /v1/policies/{id}
-      - delete
-    severity: 0
-    range:
-      start:
-        line: 112
-        character: 11
-      end:
-        line: 146
-        character: 35
-  - code: openapi-operations-operation-ids-error
-    message: Operation MUST Have Identifier
-    path:
-      - paths
-      - /v1/policies/{id}
-      - delete
-    severity: 0
-    range:
-      start:
-        line: 112
-        character: 11
-      end:
-        line: 146
-        character: 35
-  - code: openapi-operations-tags-error
-    message: Operations MUST Have Tags
-    path:
-      - paths
-      - /v1/policies/{id}
-      - delete
-    severity: 0
-    range:
-      start:
-        line: 112
-        character: 11
-      end:
-        line: 146
-        character: 35
-  - code: openapi-operations-summary-info
-    message: Operation Has a Summary
-    path:
-      - paths
-      - /v1/policies/{id}
-      - delete
-      - summary
-    severity: 2
-    range:
-      start:
-        line: 113
-        character: 15
-      end:
-        line: 113
-        character: 30
-  - code: openapi-operations-summary-period-none-info
-    message: Operation Has a Period.
-    path:
-      - paths
-      - /v1/policies/{id}
-      - delete
-      - summary
-    severity: 2
-    range:
-      start:
-        line: 113
-        character: 15
-      end:
-        line: 113
-        character: 30
-  - code: openapi-operations-description-info
-    message: Operation Has Description
-    path:
-      - paths
-      - /v1/policies/{id}
-      - delete
-      - description
-    severity: 2
-    range:
-      start:
-        line: 114
-        character: 19
-      end:
-        line: 114
-        character: 52
-  - code: openapi-parameters-componentized-error
-    message: Parameters MUST use components $ref.
-    path:
-      - paths
-      - /v1/policies/{id}
-      - delete
-      - parameters
-      - '0'
-    severity: 0
-    range:
-      start:
-        line: 116
-        character: 10
-      end:
-        line: 121
-        character: 24
-  - code: openapi-parameters-componentized-error
-    message: Parameters MUST use components $ref.
-    path:
-      - paths
-      - /v1/policies/{id}
-      - delete
-      - parameters
-      - '1'
-    severity: 0
-    range:
-      start:
-        line: 122
-        character: 10
-      end:
-        line: 127
-        character: 25
-  - code: openapi-parameters-componentized-error
-    message: Parameters MUST use components $ref.
-    path:
-      - paths
-      - /v1/policies/{id}
-      - delete
-      - parameters
-      - '2'
-    severity: 0
-    range:
-      start:
-        line: 128
-        character: 10
-      end:
-        line: 133
-        character: 25
-  - code: openapi-response-delete-204-status-code-error
-    message: DELETE 204 Status Code
-    path:
-      - paths
-      - /v1/policies/{id}
-      - delete
-      - responses
-    severity: 2
-    range:
-      start:
-        line: 134
-        character: 16
-      end:
-        line: 146
-        character: 35
-  - code: openapi-response-delete-401-status-code-error
-    message: DELETE Responses MUST Have 401 Status Codes
-    path:
-      - paths
-      - /v1/policies/{id}
-      - delete
-      - responses
-    severity: 0
-    range:
-      start:
-        line: 134
-        character: 16
-      end:
-        line: 146
-        character: 35
-  - code: openapi-response-delete-403-status-code-error
-    message: DELETE Responses MUST Have 403 Status Codes
-    path:
-      - paths
-      - /v1/policies/{id}
-      - delete
-      - responses
-    severity: 0
-    range:
-      start:
-        line: 134
-        character: 16
-      end:
-        line: 146
-        character: 35
-  - code: openapi-response-delete-429-status-code-error
-    message: DELETE Responses MUST Have 429 Status Codes
-    path:
-      - paths
-      - /v1/policies/{id}
-      - delete
-      - responses
-    severity: 0
-    range:
-      start:
-        line: 134
-        character: 16
-      end:
-        line: 146
-        character: 35
-  - code: openapi-response-delete-400-schema-ref-info
-    message: DELETE 400 Responses Use Schema Reference
-    path:
-      - paths
-      - /v1/policies/{id}
-      - delete
-      - responses
-      - '400'
-    severity: 2
-    range:
-      start:
-        line: 141
-        character: 14
-      end:
-        line: 142
-        character: 61
-  - code: openapi-response-delete-400-status-code-info
-    message: DELETE Responses Has 400 Status Codes
-    path:
-      - paths
-      - /v1/policies/{id}
-      - delete
-      - responses
-      - '400'
-    severity: 2
-    range:
-      start:
-        line: 141
-        character: 14
-      end:
-        line: 142
-        character: 61
-  - code: openapi-response-delete-404-schema-ref-info
-    message: DELETE 404 Responses Uses Schema Reference
-    path:
-      - paths
-      - /v1/policies/{id}
-      - delete
-      - responses
-      - '404'
-    severity: 2
-    range:
-      start:
-        line: 143
-        character: 14
-      end:
-        line: 144
-        character: 39
-  - code: openapi-response-delete-404-status-code-info
-    message: DELETE Responses Has 404 Status Codes
-    path:
-      - paths
-      - /v1/policies/{id}
-      - delete
-      - responses
-      - '404'
-    severity: 2
-    range:
-      start:
-        line: 143
-        character: 14
-      end:
-        line: 144
-        character: 39
-  - code: openapi-response-delete-500-schema-ref-info
-    message: DELETE 500 Responses Uses Schema Reference
-    path:
-      - paths
-      - /v1/policies/{id}
-      - delete
-      - responses
-      - '500'
-    severity: 2
-    range:
-      start:
-        line: 145
-        character: 14
-      end:
-        line: 146
-        character: 35
-  - code: openapi-response-delete-500-status-code-info
-    message: DELETE Responses MUST Have 500 Status Codes
-    path:
-      - paths
-      - /v1/policies/{id}
-      - delete
-      - responses
-      - '500'
-    severity: 2
-    range:
-      start:
-        line: 145
-        character: 14
-      end:
-        line: 146
-        character: 35
+        character: 81
   - code: openapi-components-examples-error
     message: Components MUST Have a Examples Property
     path:
@@ -1540,11 +489,11 @@ results:
     severity: 0
     range:
       start:
-        line: 147
+        line: 134
         character: 11
       end:
-        line: 160
-        character: 63
+        line: 141
+        character: 71
   - code: openapi-components-headers-error
     message: Components MUST Have a Headers Property
     path:
@@ -1552,11 +501,11 @@ results:
     severity: 0
     range:
       start:
-        line: 147
+        line: 134
         character: 11
       end:
-        line: 160
-        character: 63
+        line: 141
+        character: 71
   - code: openapi-components-parameters-error
     message: Components MUST Have a Parameters Property
     path:
@@ -1564,11 +513,11 @@ results:
     severity: 0
     range:
       start:
-        line: 147
+        line: 134
         character: 11
       end:
-        line: 160
-        character: 63
+        line: 141
+        character: 71
   - code: openapi-components-responses-error
     message: Components MUST have a responses property.
     path:
@@ -1576,11 +525,11 @@ results:
     severity: 0
     range:
       start:
-        line: 147
+        line: 134
         character: 11
       end:
-        line: 160
-        character: 63
+        line: 141
+        character: 71
   - code: openapi-security-schemes-error
     message: Components MUST Have a Security Schemes
     path:
@@ -1588,11 +537,11 @@ results:
     severity: 0
     range:
       start:
-        line: 147
+        line: 134
         character: 11
       end:
-        line: 160
-        character: 63
+        line: 141
+        character: 71
   - code: openapi-components-schemas-info
     message: Components Have a Schema Property
     path:
@@ -1601,226 +550,145 @@ results:
     severity: 2
     range:
       start:
-        line: 148
+        line: 135
         character: 10
       end:
-        line: 160
-        character: 63
+        line: 141
+        character: 71
   - code: openapi-schema-description-error
     message: Schema MUST Have a Description.
     path:
       - components
       - schemas
-      - Policy
+      - StatusError
     severity: 0
     range:
       start:
-        line: 149
-        character: 11
+        line: 136
+        character: 16
       end:
-        line: 160
-        character: 63
+        line: 141
+        character: 71
   - code: openapi-schema-names-pascal-case-info
     message: Schema Names Are PascalCase.
     path:
       - components
       - schemas
-      - Policy
+      - StatusError
     severity: 2
     range:
       start:
-        line: 149
-        character: 11
+        line: 136
+        character: 16
       end:
-        line: 160
-        character: 63
+        line: 141
+        character: 71
   - code: openapi-schema-required-error
     message: Schema MUST Have Required Property
     path:
       - components
       - schemas
-      - Policy
+      - StatusError
     severity: 0
     range:
       start:
-        line: 149
-        character: 11
+        line: 136
+        character: 16
       end:
-        line: 160
-        character: 63
+        line: 141
+        character: 71
   - code: openapi-schema-type-info
     message: Schema Has Type Property
     path:
       - components
       - schemas
-      - Policy
+      - StatusError
       - type
     severity: 2
     range:
       start:
-        line: 150
+        line: 137
         character: 12
       end:
-        line: 150
+        line: 137
         character: 18
   - code: openapi-schema-properties-info
     message: Schema Have Properties
     path:
       - components
       - schemas
-      - Policy
+      - StatusError
       - properties
     severity: 2
     range:
       start:
-        line: 151
+        line: 138
         character: 17
       end:
-        line: 160
-        character: 63
+        line: 141
+        character: 71
   - code: openapi-schema-properties-names-camel-case-info
     message: Schema Property Names Are camelCase.
     path:
       - components
       - schemas
-      - Policy
+      - StatusError
       - properties
-      - id
+      - error
     severity: 2
     range:
       start:
-        line: 152
-        character: 11
+        line: 139
+        character: 14
       end:
-        line: 154
-        character: 54
+        line: 141
+        character: 71
   - code: openapi-schema-properties-string-maxlength-error
     message: Schema String Properties MUST Have Maximum Length
     path:
       - components
       - schemas
-      - Policy
+      - StatusError
       - properties
-      - id
+      - error
     severity: 0
     range:
       start:
-        line: 152
-        character: 11
+        line: 139
+        character: 14
       end:
-        line: 154
-        character: 54
+        line: 141
+        character: 71
   - code: openapi-schema-properties-string-minlength-error
     message: Schema String Properties MUST Have Minimum Length
     path:
       - components
       - schemas
-      - Policy
+      - StatusError
       - properties
-      - id
+      - error
     severity: 0
     range:
       start:
-        line: 152
-        character: 11
+        line: 139
+        character: 14
       end:
-        line: 154
-        character: 54
+        line: 141
+        character: 71
   - code: openapi-schema-properties-descriptions-info
     message: Schema Properties Have Description
     path:
       - components
       - schemas
-      - Policy
+      - StatusError
       - properties
-      - id
+      - error
       - description
     severity: 2
     range:
       start:
-        line: 154
+        line: 141
         character: 23
       end:
-        line: 154
-        character: 54
-  - code: openapi-schema-properties-names-camel-case-info
-    message: Schema Property Names Are camelCase.
-    path:
-      - components
-      - schemas
-      - Policy
-      - properties
-      - raw
-    severity: 2
-    range:
-      start:
-        line: 155
-        character: 12
-      end:
-        line: 157
-        character: 44
-  - code: openapi-schema-properties-string-maxlength-error
-    message: Schema String Properties MUST Have Maximum Length
-    path:
-      - components
-      - schemas
-      - Policy
-      - properties
-      - raw
-    severity: 0
-    range:
-      start:
-        line: 155
-        character: 12
-      end:
-        line: 157
-        character: 44
-  - code: openapi-schema-properties-string-minlength-error
-    message: Schema String Properties MUST Have Minimum Length
-    path:
-      - components
-      - schemas
-      - Policy
-      - properties
-      - raw
-    severity: 0
-    range:
-      start:
-        line: 155
-        character: 12
-      end:
-        line: 157
-        character: 44
-  - code: openapi-schema-properties-descriptions-info
-    message: Schema Properties Have Description
-    path:
-      - components
-      - schemas
-      - Policy
-      - properties
-      - raw
-      - description
-    severity: 2
-    range:
-      start:
-        line: 157
-        character: 23
-      end:
-        line: 157
-        character: 44
-  - code: openapi-schema-properties-names-camel-case-info
-    message: Schema Property Names Are camelCase.
-    path:
-      - components
-      - schemas
-      - Policy
-      - properties
-      - ast
-    severity: 2
-    range:
-      start:
-        line: 158
-        character: 12
-      end:
-        line: 160
-        character: 63
+        line: 141
+        character: 71
