@@ -31,7 +31,7 @@ apis:
     properties:
       - url: https://www.openpolicyagent.org/docs/latest/rest-api/#policy-api
         type: Documentation
-      - url: properties/policy-api.yml
+      - url: openapipolicy-api.yml
         type: OpenAPI
       - url: policy/bruno.json
         type: BrunoCollection
@@ -47,7 +47,7 @@ apis:
     properties:
       - url: https://www.openpolicyagent.org/docs/latest/rest-api/#data-api
         type: Documentation
-      - url: properties/data-api.yml
+      - url: openapidata-api.yml
         type: OpenAPI
       - url: data/bruno.json
         type: BrunoCollection 
@@ -62,7 +62,7 @@ apis:
     properties:
       - url: https://www.openpolicyagent.org/docs/latest/rest-api/#query-api
         type: Documentation
-      - url: properties/query-api.yml
+      - url: openapiquery-api.yml
         type: OpenAPI
       - url: query/bruno.json
         type: BrunoCollection    
@@ -78,7 +78,7 @@ apis:
     properties:
       - url: https://www.openpolicyagent.org/docs/latest/rest-api/#compile-api
         type: Documentation
-      - url: properties/compile-api.yml
+      - url: openapicompile-api.yml
         type: OpenAPI
       - url: compile/bruno.json
         type: BrunoCollection 
@@ -94,7 +94,7 @@ apis:
     properties:
       - url: https://www.openpolicyagent.org/docs/latest/rest-api/#health-api
         type: Documentation
-      - url: properties/health-api.yml
+      - url: openapihealth-api.yml
         type: OpenAPI
       - url: health/bruno.json
         type: BrunoCollection   
@@ -111,7 +111,7 @@ apis:
     properties:
       - url: https://www.openpolicyagent.org/docs/latest/rest-api/#config-api
         type: Documentation
-      - url: properties/config-api.yml
+      - url: openapiconfig-api.yml
         type: OpenAPI
       - url: config/bruno.json
         type: BrunoCollection  
@@ -128,7 +128,7 @@ apis:
     properties:
       - url: https://www.openpolicyagent.org/docs/latest/rest-api/#status-api
         type: Documentation
-      - url: properties/status-api.yml
+      - url: openapistatus-api.yml
         type: OpenAPI
       - url: status/bruno.json
         type: BrunoCollection 
