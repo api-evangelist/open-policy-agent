@@ -138,7 +138,7 @@ name: Open Policy Agent
 tags:
   - Policies
   - Standards
-type: Index
+type: Contract
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
 common:
@@ -159,15 +159,17 @@ common:
     type: GitHubRepository
 created: '2024-11-18'
 modified: '2025-01-02'
-position: Consumer
-description: |-
-
-  Stop using a different policy language, policy model, and policy API for every
-  product and service you use. Use OPA for a unified toolset and framework for
-  policy across the cloud native stack. Whether for one service or for all your
-  services, use OPA to decouple policy from the service's code so you can
-  release, analyze, and review policies (which security and compliance teams
-  love) without sacrificing availability or performance.
+position: Consuming
+description: >-
+  Open Policy Agent (OPA) is an open-source project that provides a flexible and
+  powerful policy engine for cloud-native environments. OPA enables users to
+  define and enforce policies across their infrastructure, applications, and
+  services through a declarative language called Rego. OPA integrates seamlessly
+  with popular tools and frameworks like Kubernetes, Istio, and Envoy, making it
+  easy to implement fine-grained access control, security, and compliance
+  policies. With OPA, organizations can centralize policy management, ensure
+  consistent enforcement across their entire stack, and enable secure and
+  compliant operations at scale.
 maintainers:
   - FN: Kin Lane
     email: info@apievangelist.com
