@@ -1,7 +1,6 @@
 aid: open-policy-agent
 url: >-
-
-  https://raw.githubusercontent.com/api-search/open-policy-agent/refs/heads/main/apis.yml
+  https://raw.githubusercontent.com/api-evangelist/open-policy-agent/refs/heads/main/apis.yml
 apis:
   - aid: open-policy-agent:open-policy-agent-policy-api
     name: Open Policy Agent Policy API
@@ -158,7 +157,7 @@ common:
     name: GitHub Repository
     type: GitHubRepository
 created: '2024-11-18'
-modified: '2025-01-05'
+modified: '2026-03-16'
 position: Consuming
 description: >-
   Open Policy Agent (OPA) is an open-source project that provides a flexible and
@@ -172,5 +171,5 @@ description: >-
   compliant operations at scale.
 maintainers:
   - FN: Kin Lane
-    email: info@apievangelist.com
+    email: kin@apievangelist.com
 specificationVersion: '0.19'
