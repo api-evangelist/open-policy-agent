@@ -1,0 +1,514 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://www.openpolicyagent.org/schemas/opa/policy.json",
+  "title": "Open Policy Agent Resources",
+  "description": "Schema for Open Policy Agent (OPA) core resources including policy modules, data documents, evaluation inputs and results, query requests, partial evaluation compile requests, and OPA status and configuration. OPA uses the Rego policy language to evaluate authorization and policy decisions against structured input data.",
+  "type": "object",
+  "$defs": {
+    "PolicyModule": {
+      "type": "object",
+      "title": "PolicyModule",
+      "description": "A Rego policy module stored in OPA. Policy modules define rules, functions, and sets that OPA evaluates when making policy decisions. Each module has a unique ID and contains Rego source code that is parsed into an Abstract Syntax Tree (AST) for evaluation.",
+      "required": ["id", "raw"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the policy module within the OPA instance. Used in API paths to reference the specific policy. Typically uses a path-like format (e.g., 'authz/main').",
+          "minLength": 1,
+          "maxLength": 1024
+        },
+        "raw": {
+          "type": "string",
+          "description": "Raw Rego source code for the policy module. Contains package declarations, import statements, rule definitions, and function definitions written in the Rego policy language.",
+          "minLength": 1
+        },
+        "ast": {
+          "$ref": "#/$defs/PolicyAST",
+          "description": "Abstract Syntax Tree (AST) representation of the parsed Rego policy module. Returned by OPA when the policy is retrieved and contains the structured representation of all rules and expressions."
+        }
+      }
+    },
+    "PolicyAST": {
+      "type": "object",
+      "title": "PolicyAST",
+      "description": "The Abstract Syntax Tree (AST) representation of a parsed Rego policy module. The AST is produced by OPA's parser and reflects the complete structure of the policy including all packages, imports, rules, and expressions.",
+      "properties": {
+        "package": {
+          "type": "object",
+          "description": "The package declaration identifying the namespace this policy belongs to",
+          "properties": {
+            "path": {
+              "type": "array",
+              "description": "Package path components (e.g., ['data', 'authz', 'main'])",
+              "items": {
+                "type": "object",
+                "description": "A path component term"
+              }
+            }
+          }
+        },
+        "imports": {
+          "type": "array",
+          "description": "Import statements that bring external packages or data into scope",
+          "items": {
+            "type": "object",
+            "description": "An import statement"
+          }
+        },
+        "rules": {
+          "type": "array",
+          "description": "Rule definitions within the policy module, including complete rules, partial rules, and functions",
+          "items": {
+            "$ref": "#/$defs/PolicyRule"
+          }
+        }
+      }
+    },
+    "PolicyRule": {
+      "type": "object",
+      "title": "PolicyRule",
+      "description": "A single rule definition within an OPA policy module. Rules can be complete rules (with a single value), partial rules (contributing to a set or object), or functions (with parameters). Rules are evaluated by OPA when policy decisions are requested.",
+      "properties": {
+        "default": {
+          "type": "boolean",
+          "description": "When true, this rule provides the default value for the rule head when no other rule body evaluates to true"
+        },
+        "head": {
+          "type": "object",
+          "description": "The rule head defining the rule's name and value",
+          "properties": {
+            "name": {
+              "type": "string",
+              "description": "Name of the rule"
+            },
+            "value": {
+              "type": "object",
+              "description": "The value the rule evaluates to"
+            }
+          }
+        },
+        "body": {
+          "type": "array",
+          "description": "The rule body containing the conditions (expressions) that must be satisfied for the rule to be true",
+          "items": {
+            "type": "object",
+            "description": "An expression in the rule body"
+          }
+        }
+      }
+    },
+    "DataDocument": {
+      "type": "object",
+      "title": "DataDocument",
+      "description": "A data document stored in OPA's virtual document model. Data documents are structured JSON values stored at hierarchical paths under the 'data' root. They can be static base documents loaded at startup, or virtual documents computed by policy rules.",
+      "properties": {
+        "result": {
+          "description": "The value of the document at the requested path. Can be any JSON type: object, array, string, number, boolean, or null.",
+          "type": ["object", "array", "string", "number", "boolean", "null"]
+        },
+        "metrics": {
+          "$ref": "#/$defs/EvaluationMetrics",
+          "description": "Performance metrics for the document evaluation, included when metrics=true query parameter is set"
+        },
+        "decision_id": {
+          "type": "string",
+          "description": "Unique identifier for this policy decision, included when the decision_logs plugin is enabled. Used to correlate API responses with decision log entries."
+        },
+        "provenance": {
+          "$ref": "#/$defs/Provenance",
+          "description": "Build and version information about the OPA instance, included when provenance=true query parameter is set"
+        },
+        "explanation": {
+          "type": "array",
+          "description": "Step-by-step trace of rule evaluation, included when the explain query parameter is set",
+          "items": {
+            "type": "object",
+            "description": "An evaluation trace event"
+          }
+        }
+      }
+    },
+    "PolicyDecisionRequest": {
+      "type": "object",
+      "title": "PolicyDecisionRequest",
+      "description": "Request body for a policy decision evaluation sent to the OPA Data API. The input document is passed to OPA's policy rules as the 'input' global variable and can contain any JSON-structured data such as HTTP request attributes, user identity, or resource properties.",
+      "properties": {
+        "input": {
+          "description": "The input document made available to policy rules as the 'input' variable. Can be any JSON type, but is typically an object containing context about the action being authorized.",
+          "type": ["object", "array", "string", "number", "boolean", "null"]
+        }
+      }
+    },
+    "QueryRequest": {
+      "type": "object",
+      "title": "QueryRequest",
+      "description": "Request body for executing an ad-hoc Rego query against OPA. Queries are evaluated in the context of the loaded policy and data documents. Ad-hoc queries are useful for testing and debugging but production use should prefer the Data API.",
+      "required": ["query"],
+      "properties": {
+        "query": {
+          "type": "string",
+          "description": "Rego query expression to evaluate (e.g., 'data.authz.allow == true')",
+          "minLength": 1
+        },
+        "input": {
+          "description": "Input document to make available as the 'input' variable during query evaluation",
+          "type": ["object", "array", "string", "number", "boolean", "null"]
+        },
+        "imports": {
+          "type": "array",
+          "description": "Additional import statements to include in the query evaluation context",
+          "items": {
+            "type": "string",
+            "description": "An import path (e.g., 'data.authz')"
+          }
+        },
+        "package": {
+          "type": "string",
+          "description": "Package namespace for resolving relative rule references in the query"
+        },
+        "unknowns": {
+          "type": "array",
+          "description": "Variables treated as unknown during partial evaluation for the Compile API",
+          "items": {
+            "type": "string",
+            "description": "A reference to treat as unknown (e.g., 'input.user')"
+          }
+        }
+      }
+    },
+    "QueryResult": {
+      "type": "object",
+      "title": "QueryResult",
+      "description": "Result of a Rego query evaluation. The result set contains one binding for each way the query can be satisfied. An empty result set means the query is undefined (not satisfied).",
+      "properties": {
+        "result": {
+          "type": "array",
+          "description": "Set of bindings that satisfy the query. Each entry maps variable names to their bound values.",
+          "items": {
+            "type": "object",
+            "description": "A binding set satisfying the query",
+            "properties": {
+              "bindings": {
+                "type": "object",
+                "description": "Map of variable names to their bound values in this result",
+                "additionalProperties": true
+              },
+              "expressions": {
+                "type": "array",
+                "description": "Expression results in the same order as the query expressions",
+                "items": {
+                  "type": "object",
+                  "description": "Expression evaluation result",
+                  "properties": {
+                    "value": {
+                      "description": "The value the expression evaluated to"
+                    },
+                    "text": {
+                      "type": "string",
+                      "description": "The original expression text"
+                    },
+                    "location": {
+                      "$ref": "#/$defs/SourceLocation"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "metrics": {
+          "$ref": "#/$defs/EvaluationMetrics"
+        },
+        "decision_id": {
+          "type": "string",
+          "description": "Unique decision identifier for correlation with decision logs"
+        }
+      }
+    },
+    "CompileRequest": {
+      "type": "object",
+      "title": "CompileRequest",
+      "description": "Request body for the OPA Compile API which performs partial evaluation of a Rego query. Partial evaluation simplifies the policy by evaluating known inputs and leaving unknowns as variables, producing a simplified set of conditions. The result can be used to push policy enforcement into external systems.",
+      "required": ["query"],
+      "properties": {
+        "query": {
+          "type": "string",
+          "description": "Rego query to partially evaluate (e.g., 'data.authz.allow == true')",
+          "minLength": 1
+        },
+        "input": {
+          "description": "Partial input document with known values. Unknown portions should be omitted.",
+          "type": ["object", "array", "string", "number", "boolean", "null"]
+        },
+        "unknowns": {
+          "type": "array",
+          "description": "References to treat as unknown during partial evaluation. These become variables in the residual output. Defaults to ['input'] if not specified.",
+          "items": {
+            "type": "string",
+            "description": "A Rego reference to treat as unknown (e.g., 'input.user.role')"
+          }
+        },
+        "options": {
+          "type": "object",
+          "description": "Compiler options controlling partial evaluation behavior",
+          "properties": {
+            "disableInlining": {
+              "type": "array",
+              "description": "List of rule references to exclude from inlining during partial evaluation",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "CompileResult": {
+      "type": "object",
+      "title": "CompileResult",
+      "description": "Result of partial evaluation from the OPA Compile API. The result is a set of support rules and a partial set of queries representing the conditions that remain after known inputs are evaluated.",
+      "properties": {
+        "result": {
+          "type": "object",
+          "description": "The partial evaluation result containing residual queries and support rules",
+          "properties": {
+            "queries": {
+              "type": "array",
+              "description": "Residual queries after partial evaluation. Each query is an array of expressions that must be true for the policy to allow the request.",
+              "items": {
+                "type": "array",
+                "description": "A residual query expression list",
+                "items": {
+                  "type": "object",
+                  "description": "A residual expression"
+                }
+              }
+            },
+            "support": {
+              "type": "array",
+              "description": "Support rules generated during partial evaluation that may be needed to evaluate the residual queries",
+              "items": {
+                "type": "object",
+                "description": "A support policy module"
+              }
+            }
+          }
+        },
+        "metrics": {
+          "$ref": "#/$defs/EvaluationMetrics"
+        }
+      }
+    },
+    "EvaluationMetrics": {
+      "type": "object",
+      "title": "EvaluationMetrics",
+      "description": "Performance metrics collected during OPA policy evaluation. Returned when the metrics=true query parameter is included in API requests.",
+      "properties": {
+        "timer_rego_query_eval_ns": {
+          "type": "integer",
+          "description": "Time spent evaluating the Rego query in nanoseconds",
+          "minimum": 0
+        },
+        "timer_rego_query_parse_ns": {
+          "type": "integer",
+          "description": "Time spent parsing the query in nanoseconds",
+          "minimum": 0
+        },
+        "timer_rego_query_compile_ns": {
+          "type": "integer",
+          "description": "Time spent compiling the query in nanoseconds",
+          "minimum": 0
+        },
+        "timer_rego_module_parse_ns": {
+          "type": "integer",
+          "description": "Time spent parsing policy modules in nanoseconds",
+          "minimum": 0
+        },
+        "timer_rego_module_compile_ns": {
+          "type": "integer",
+          "description": "Time spent compiling policy modules in nanoseconds",
+          "minimum": 0
+        },
+        "counter_rego_query_eval": {
+          "type": "integer",
+          "description": "Number of query evaluation iterations",
+          "minimum": 0
+        }
+      }
+    },
+    "Provenance": {
+      "type": "object",
+      "title": "Provenance",
+      "description": "Build and version information about the OPA instance that processed the request. Useful for debugging and auditing policy decisions.",
+      "properties": {
+        "version": {
+          "type": "string",
+          "description": "OPA version string (e.g., '0.57.0')"
+        },
+        "build_commit": {
+          "type": "string",
+          "description": "Git commit hash of the OPA build"
+        },
+        "build_timestamp": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp when this OPA binary was built"
+        },
+        "build_hostname": {
+          "type": "string",
+          "description": "Hostname of the machine that built this OPA binary"
+        },
+        "bundles": {
+          "type": "object",
+          "description": "Map of bundle names to their current revision/hash information",
+          "additionalProperties": {
+            "type": "object",
+            "description": "Bundle version information",
+            "properties": {
+              "revision": {
+                "type": "string",
+                "description": "Current revision identifier for the bundle"
+              }
+            }
+          }
+        }
+      }
+    },
+    "OPAError": {
+      "type": "object",
+      "title": "OPAError",
+      "description": "Error response returned by the OPA REST API when a request fails. Error responses include a machine-readable code and a human-readable message.",
+      "required": ["code", "message"],
+      "properties": {
+        "code": {
+          "type": "string",
+          "description": "Machine-readable error code identifying the error category",
+          "enum": [
+            "invalid_parameter",
+            "invalid_type",
+            "policy_invalid",
+            "policy_conflict",
+            "evaluation_error",
+            "undefined_document",
+            "resource_not_found",
+            "resource_conflict",
+            "internal_error"
+          ]
+        },
+        "message": {
+          "type": "string",
+          "description": "Human-readable description of the error"
+        },
+        "errors": {
+          "type": "array",
+          "description": "Detailed list of specific errors, particularly for policy compilation errors",
+          "items": {
+            "type": "object",
+            "description": "A specific error detail",
+            "properties": {
+              "code": {
+                "type": "string",
+                "description": "Error code for this specific error"
+              },
+              "message": {
+                "type": "string",
+                "description": "Error message for this specific error"
+              },
+              "location": {
+                "$ref": "#/$defs/SourceLocation"
+              }
+            }
+          }
+        }
+      }
+    },
+    "SourceLocation": {
+      "type": "object",
+      "title": "SourceLocation",
+      "description": "Source code location within a Rego policy file, used in error messages and AST nodes to identify where an expression or error occurs.",
+      "properties": {
+        "file": {
+          "type": "string",
+          "description": "Policy module ID or filename containing the source"
+        },
+        "row": {
+          "type": "integer",
+          "description": "Line number in the source file (1-indexed)",
+          "minimum": 1
+        },
+        "col": {
+          "type": "integer",
+          "description": "Column number in the source line (1-indexed)",
+          "minimum": 1
+        }
+      }
+    },
+    "OPAStatus": {
+      "type": "object",
+      "title": "OPAStatus",
+      "description": "Status information about the OPA instance including bundle loading state, plugin health, and policy activation status. Returned by the Status API.",
+      "properties": {
+        "bundles": {
+          "type": "object",
+          "description": "Map of bundle names to their current loading status",
+          "additionalProperties": {
+            "$ref": "#/$defs/BundleStatus"
+          }
+        },
+        "plugins": {
+          "type": "object",
+          "description": "Map of plugin names to their current state",
+          "additionalProperties": {
+            "type": "object",
+            "description": "Plugin status information",
+            "properties": {
+              "state": {
+                "type": "string",
+                "description": "Current plugin state",
+                "enum": ["not_ready", "ok", "warn", "error"]
+              }
+            }
+          }
+        }
+      }
+    },
+    "BundleStatus": {
+      "type": "object",
+      "title": "BundleStatus",
+      "description": "Loading and activation status for an OPA bundle. Bundles contain policy modules and/or data documents loaded from remote sources.",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Name of the bundle as configured in OPA"
+        },
+        "active_revision": {
+          "type": "string",
+          "description": "Currently active revision identifier for this bundle"
+        },
+        "last_successful_activation": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp of the last successful bundle activation"
+        },
+        "last_successful_download": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp of the last successful bundle download"
+        },
+        "last_successful_request": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp of the last successful request to the bundle server"
+        },
+        "code": {
+          "type": "string",
+          "description": "Error code if the bundle is in an error state"
+        },
+        "message": {
+          "type": "string",
+          "description": "Error message if the bundle failed to load"
+        }
+      }
+    }
+  }
+}

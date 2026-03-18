@@ -1,0 +1,195 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "opa": "https://www.openpolicyagent.org/vocab/",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+
+    "PolicyModule": {
+      "@id": "opa:PolicyModule",
+      "@context": {
+        "id": {
+          "@id": "schema:identifier"
+        },
+        "raw": {
+          "@id": "opa:regoSource"
+        },
+        "ast": {
+          "@id": "opa:abstractSyntaxTree"
+        }
+      }
+    },
+
+    "PolicyRule": {
+      "@id": "opa:PolicyRule",
+      "@context": {
+        "default": {
+          "@id": "opa:isDefault",
+          "@type": "xsd:boolean"
+        },
+        "head": {
+          "@id": "opa:ruleHead"
+        },
+        "body": {
+          "@id": "opa:ruleBody",
+          "@container": "@set"
+        }
+      }
+    },
+
+    "DataDocument": {
+      "@id": "opa:DataDocument",
+      "@context": {
+        "result": {
+          "@id": "opa:documentValue"
+        },
+        "decision_id": {
+          "@id": "schema:identifier"
+        },
+        "metrics": {
+          "@id": "opa:evaluationMetrics"
+        }
+      }
+    },
+
+    "PolicyDecisionRequest": {
+      "@id": "opa:PolicyDecisionRequest",
+      "@context": {
+        "input": {
+          "@id": "opa:inputDocument"
+        }
+      }
+    },
+
+    "QueryRequest": {
+      "@id": "opa:QueryRequest",
+      "@context": {
+        "query": {
+          "@id": "opa:regoQuery"
+        },
+        "input": {
+          "@id": "opa:inputDocument"
+        },
+        "unknowns": {
+          "@id": "opa:unknownRefs",
+          "@container": "@set"
+        }
+      }
+    },
+
+    "QueryResult": {
+      "@id": "opa:QueryResult",
+      "@context": {
+        "result": {
+          "@id": "opa:resultSet",
+          "@container": "@set"
+        },
+        "decision_id": {
+          "@id": "schema:identifier"
+        },
+        "metrics": {
+          "@id": "opa:evaluationMetrics"
+        }
+      }
+    },
+
+    "CompileRequest": {
+      "@id": "opa:CompileRequest",
+      "@context": {
+        "query": {
+          "@id": "opa:regoQuery"
+        },
+        "input": {
+          "@id": "opa:inputDocument"
+        },
+        "unknowns": {
+          "@id": "opa:unknownRefs",
+          "@container": "@set"
+        }
+      }
+    },
+
+    "OPAError": {
+      "@id": "opa:OPAError",
+      "@context": {
+        "code": {
+          "@id": "schema:identifier"
+        },
+        "message": {
+          "@id": "schema:description"
+        }
+      }
+    },
+
+    "OPAStatus": {
+      "@id": "opa:OPAStatus",
+      "@context": {
+        "bundles": {
+          "@id": "opa:bundleStatus"
+        },
+        "plugins": {
+          "@id": "opa:pluginStatus"
+        }
+      }
+    },
+
+    "BundleStatus": {
+      "@id": "opa:BundleStatus",
+      "@context": {
+        "name": {
+          "@id": "schema:name"
+        },
+        "active_revision": {
+          "@id": "opa:activeRevision"
+        },
+        "last_successful_activation": {
+          "@id": "opa:lastSuccessfulActivation",
+          "@type": "xsd:dateTime"
+        },
+        "last_successful_download": {
+          "@id": "opa:lastSuccessfulDownload",
+          "@type": "xsd:dateTime"
+        }
+      }
+    },
+
+    "EvaluationMetrics": {
+      "@id": "opa:EvaluationMetrics",
+      "@context": {
+        "timer_rego_query_eval_ns": {
+          "@id": "opa:queryEvalNs",
+          "@type": "xsd:integer"
+        },
+        "timer_rego_query_parse_ns": {
+          "@id": "opa:queryParseNs",
+          "@type": "xsd:integer"
+        },
+        "timer_rego_query_compile_ns": {
+          "@id": "opa:queryCompileNs",
+          "@type": "xsd:integer"
+        }
+      }
+    },
+
+    "Provenance": {
+      "@id": "opa:Provenance",
+      "@context": {
+        "version": {
+          "@id": "schema:version"
+        },
+        "build_commit": {
+          "@id": "opa:buildCommit"
+        },
+        "build_timestamp": {
+          "@id": "dcterms:created",
+          "@type": "xsd:dateTime"
+        },
+        "build_hostname": {
+          "@id": "schema:hostName"
+        }
+      }
+    }
+  }
+}

@@ -6,24 +6,29 @@ apis:
     name: Open Policy Agent Policy API
     tags:
       - Policies
+      - Rego
+      - Management
     humanURL: https://www.openpolicyagent.org/docs/latest/rest-api/#policy-api
     properties:
       - url: https://www.openpolicyagent.org/docs/latest/rest-api/#policy-api
         type: Documentation
       - url: openapi/policy-api.yml
         type: OpenAPI
+      - url: json-schema/opa-policy-schema.json
+        type: JSONSchema
       - url: policy/bruno.json
         type: BrunoCollection
       - url: >-
 
           https://api-evangelist.postman.co/workspace/Open-Policy-Agentbcc99d6c-728a-4d86-83fd-b6495f5e8fb8/collection/35240-19ce2c88-97b8-4f58-a101-b8be70794a85
         type: PostmanCollection
-    description: API for managing policy modules, allowing CRUD operations.
+    description: API for managing policy modules, allowing CRUD operations on Rego policy files stored in OPA.
   - aid: open-policy-agent:open-policy-agent-data-api
     name: Open Policy Agent Data API
     tags:
       - Data
       - Documents
+      - Storage
     humanURL: https://www.openpolicyagent.org/docs/latest/rest-api/#data-api
     properties:
       - url: https://www.openpolicyagent.org/docs/latest/rest-api/#data-api
@@ -41,6 +46,8 @@ apis:
     name: Open Policy Agent Query API
     tags:
       - Queries
+      - Rego
+      - Evaluation
     humanURL: https://www.openpolicyagent.org/docs/latest/rest-api/#query-api
     properties:
       - url: https://www.openpolicyagent.org/docs/latest/rest-api/#query-api
@@ -59,6 +66,7 @@ apis:
     tags:
       - Compile
       - Evaluation
+      - Partial Evaluation
     humanURL: https://www.openpolicyagent.org/docs/latest/rest-api/#compile-api
     properties:
       - url: https://www.openpolicyagent.org/docs/latest/rest-api/#compile-api
@@ -77,6 +85,7 @@ apis:
     tags:
       - Health
       - Availability
+      - Monitoring
     humanURL: https://www.openpolicyagent.org/docs/latest/rest-api/#health-api
     properties:
       - url: https://www.openpolicyagent.org/docs/latest/rest-api/#health-api
@@ -97,6 +106,8 @@ apis:
     name: Open Policy Agent Config API
     tags:
       - Configurations
+      - Management
+      - Discovery
     humanURL: https://www.openpolicyagent.org/docs/latest/rest-api/#config-api
     properties:
       - url: https://www.openpolicyagent.org/docs/latest/rest-api/#config-api
@@ -117,6 +128,8 @@ apis:
     name: Open Policy Agent Status API
     tags:
       - Status
+      - Monitoring
+      - Observability
     humanURL: https://www.openpolicyagent.org/docs/latest/rest-api/#status-api
     properties:
       - url: https://www.openpolicyagent.org/docs/latest/rest-api/#status-api
@@ -141,15 +154,54 @@ type: Contract
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
 common:
-  - url: https://www.openpolicyagent.org/docs/latest/rest-api/
+  - url: json-schema/opa-policy-schema.json
+    name: OPA Policy Schema
+    type: JSONSchema
+  - url: json-ld/opa-context.jsonld
+    name: OPA JSON-LD Context
+    type: JSON-LD
+  - url: https://www.openpolicyagent.org/
+    name: Website
+    type: Website
+  - url: https://www.openpolicyagent.org/docs/latest/
     name: Documentation
     type: Documentation
+  - url: https://www.openpolicyagent.org/docs/latest/rest-api/
+    name: REST API Documentation
+    type: Documentation
+  - url: https://www.openpolicyagent.org/docs/latest/#running-opa
+    name: Getting Started
+    type: Getting Started
   - url: https://www.openpolicyagent.org/docs/latest/rest-api/#authentication
     name: Authentication
     type: Authentication
   - url: https://www.openpolicyagent.org/docs/latest/rest-api/#errors
     name: Errors
     type: Errors
+  - url: https://github.com/open-policy-agent
+    name: GitHub Organization
+    type: GitHub Organization
+  - url: https://github.com/open-policy-agent/opa
+    name: OPA GitHub Repository
+    type: GitHubRepository
+  - url: https://blog.openpolicyagent.org/
+    name: Blog
+    type: Blog
+  - url: https://www.openpolicyagent.org/community/
+    name: Community
+    type: Community
+  - url: https://slack.openpolicyagent.org/
+    name: Slack
+    type: Slack
+  - url: https://github.com/open-policy-agent/opa/blob/main/CHANGELOG.md
+    name: Change Log
+    type: Change Log
+  - url: https://github.com/open-policy-agent/opa/security/policy
+    name: Security
+    type: Security
+  - url: https://stackoverflow.com/questions/tagged/open-policy-agent
+    name: Stack Overflow
+    type: Stack Overflow
   - url: https://www.postman.com/api-evangelist/open-policy-agent/overview
     name: Postman Workspace
     type: PostmanWorkspace
@@ -157,7 +209,7 @@ common:
     name: GitHub Repository
     type: GitHubRepository
 created: '2024-11-18'
-modified: '2026-03-16'
+modified: '2026-03-18'
 position: Consuming
 description: >-
   Open Policy Agent (OPA) is an open-source project that provides a flexible and
