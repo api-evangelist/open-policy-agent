@@ -5,9 +5,9 @@ apis:
   - aid: open-policy-agent:open-policy-agent-policy-api
     name: Open Policy Agent Policy API
     tags:
+      - Management
       - Policies
       - Rego
-      - Management
     humanURL: https://www.openpolicyagent.org/docs/latest/rest-api/#policy-api
     properties:
       - url: https://www.openpolicyagent.org/docs/latest/rest-api/#policy-api
@@ -22,8 +22,7 @@ apis:
 
           https://api-evangelist.postman.co/workspace/Open-Policy-Agentbcc99d6c-728a-4d86-83fd-b6495f5e8fb8/collection/35240-19ce2c88-97b8-4f58-a101-b8be70794a85
         type: PostmanCollection
-    description: API for managing policy modules, allowing CRUD operations on 
-      Rego policy files stored in OPA.
+    description: API for managing policy modules, allowing CRUD operations on Rego policy files stored in OPA.
   - aid: open-policy-agent:open-policy-agent-data-api
     name: Open Policy Agent Data API
     tags:
@@ -42,14 +41,13 @@ apis:
 
           https://api-evangelist.postman.co/workspace/Open-Policy-Agentbcc99d6c-728a-4d86-83fd-b6495f5e8fb8/collection/35240-96c58dc4-3514-48ee-a35f-a9c2aeb14fa0
         type: PostmanCollection
-    description: API for reading and writing documents in OPA (Open Policy 
-      Agent).
+    description: API for reading and writing documents in OPA (Open Policy Agent).
   - aid: open-policy-agent:open-policy-agent-query-api
     name: Open Policy Agent Query API
     tags:
+      - Evaluation
       - Queries
       - Rego
-      - Evaluation
     humanURL: https://www.openpolicyagent.org/docs/latest/rest-api/#query-api
     properties:
       - url: https://www.openpolicyagent.org/docs/latest/rest-api/#query-api
@@ -62,8 +60,7 @@ apis:
 
           https://api-evangelist.postman.co/workspace/Open-Policy-Agentbcc99d6c-728a-4d86-83fd-b6495f5e8fb8/collection/35240-9170dd84-c3d5-45a4-9efc-9ef6ab30744e
         type: PostmanCollection
-    description: API for executing simple and ad-hoc queries in OPA (Open Policy
-      Agent).
+    description: API for executing simple and ad-hoc queries in OPA (Open Policy Agent).
   - aid: open-policy-agent:open-policy-agent-compile-api
     name: Open Policy Agent Compile API
     tags:
@@ -82,13 +79,12 @@ apis:
 
           https://api-evangelist.postman.co/workspace/Open-Policy-Agentbcc99d6c-728a-4d86-83fd-b6495f5e8fb8/collection/35240-1e1d8e0e-7157-4b7f-99cf-611fa56a0c3c
         type: PostmanCollection
-    description: API for partially evaluating Rego queries in OPA (Open Policy 
-      Agent).
+    description: API for partially evaluating Rego queries in OPA (Open Policy Agent).
   - aid: open-policy-agent:open-policy-agent-health-api
     name: Open Policy Agent Health API
     tags:
-      - Health
       - Availability
+      - Health
       - Monitoring
     humanURL: https://www.openpolicyagent.org/docs/latest/rest-api/#health-api
     properties:
@@ -108,8 +104,8 @@ apis:
     name: Open Policy Agent Config API
     tags:
       - Configurations
-      - Management
       - Discovery
+      - Management
     humanURL: https://www.openpolicyagent.org/docs/latest/rest-api/#config-api
     properties:
       - url: https://www.openpolicyagent.org/docs/latest/rest-api/#config-api
@@ -127,9 +123,9 @@ apis:
   - aid: open-policy-agent:open-policy-agent-status-api
     name: Open Policy Agent Status API
     tags:
-      - Status
       - Monitoring
       - Observability
+      - Status
     humanURL: https://www.openpolicyagent.org/docs/latest/rest-api/#status-api
     properties:
       - url: https://www.openpolicyagent.org/docs/latest/rest-api/#status-api
