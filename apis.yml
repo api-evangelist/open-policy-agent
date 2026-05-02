@@ -204,7 +204,7 @@ common:
     name: GitHub Repository
     type: GitHubRepository
 created: '2024-11-18'
-modified: '2026-03-18'
+modified: '2026-04-28'
 position: Consuming
 description: >-
   Open Policy Agent (OPA) is an open-source project that provides a flexible and powerful
