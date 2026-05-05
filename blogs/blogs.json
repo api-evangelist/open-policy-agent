@@ -1,0 +1,13 @@
+{
+  "repo": "open-policy-agent",
+  "feeds": [
+    {
+      "source": "https://blog.openpolicyagent.org/",
+      "feed_url": "https://blog.openpolicyagent.org/feed",
+      "saved": 10,
+      "title": "Open Policy Agent - Medium"
+    }
+  ],
+  "post_count": 10,
+  "fetched": "2026-05-03T23:33:01Z"
+}
