@@ -1,0 +1,96 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Compile API
+  description: API for partially evaluating Rego queries in OPA (Open Policy Agent).
+  tags:
+  - Open
+  - Policy
+  - Agent
+  - API
+  created: '2026-05-06'
+  modified: '2026-05-06'
+capability:
+  consumes:
+  - type: http
+    namespace: open-policy-agent
+    baseUri: https://api.example.com
+    description: Compile API HTTP API.
+    resources:
+    - name: v1-compile
+      path: /v1/compile
+      operations:
+      - name: post-v1-compile
+        method: POST
+        description: Partially Evaluate a Query
+        inputParameters:
+        - name: pretty
+          in: query
+          type: boolean
+          description: Format response for human readability.
+        - name: explain
+          in: query
+          type: string
+          description: Return query explanation.
+        - name: metrics
+          in: query
+          type: boolean
+          description: Return performance metrics.
+        - name: instrument
+          in: query
+          type: boolean
+          description: Instrument query evaluation and return additional metrics.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: open-policy-agent-rest
+    description: REST adapter for Compile API.
+    resources:
+    - path: /v1/compile
+      name: post-v1-compile
+      operations:
+      - method: POST
+        name: post-v1-compile
+        description: Partially Evaluate a Query
+        call: open-policy-agent.post-v1-compile
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: open-policy-agent-mcp
+    transport: http
+    description: MCP adapter for Compile API for AI agent use.
+    tools:
+    - name: post-v1-compile
+      description: Partially Evaluate a Query
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: open-policy-agent.post-v1-compile
+      with:
+        pretty: tools.pretty
+        explain: tools.explain
+        metrics: tools.metrics
+        instrument: tools.instrument
+      inputParameters:
+      - name: pretty
+        type: boolean
+        description: Format response for human readability.
+      - name: explain
+        type: string
+        description: Return query explanation.
+      - name: metrics
+        type: boolean
+        description: Return performance metrics.
+      - name: instrument
+        type: boolean
+        description: Instrument query evaluation and return additional metrics.
+      outputParameters:
+      - type: object
+        mapping: $.
