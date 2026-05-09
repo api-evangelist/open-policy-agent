@@ -3,11 +3,11 @@
   "feeds": [
     {
       "source": "https://blog.openpolicyagent.org/",
-      "feed_url": "https://blog.openpolicyagent.org/feed",
-      "saved": 10,
-      "title": "Open Policy Agent - Medium"
+      "feed_url": "https://blog.openpolicyagent.org/feed/",
+      "title": "Open Policy Agent - Medium",
+      "saved": 0
     }
   ],
   "post_count": 10,
-  "fetched": "2026-05-03T23:33:01Z"
+  "fetched": "2026-05-09T20:17:51Z"
 }
