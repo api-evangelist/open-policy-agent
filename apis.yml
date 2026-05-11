@@ -203,6 +203,8 @@ common:
   - url: https://github.com/api-search/open-policy-agent
     name: GitHub Repository
     type: GitHubRepository
+  - type: Integrations
+    url: https://www.openpolicyagent.org/ecosystem
 created: '2024-11-18'
 modified: '2026-04-28'
 position: Consuming
@@ -213,6 +215,19 @@ description: >-
   language called Rego. OPA integrates seamlessly with popular tools and frameworks
   like Kubernetes, Istio, and Envoy, making it easy to implement fine-grained access
   control, security, and compliance policies.
+integrations:
+  - name: OPA
+  - name: GitHub
+  - name: Slack
+  - name: JavaScript
+  - name: Java
+  - name: 'C#'
+  - name: Swift
+  - name: Clojure
+  - name: Rust
+  - name: PHP
+  - name: Zig
+  - name: CNCF
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
