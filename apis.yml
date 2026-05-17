@@ -145,7 +145,7 @@ name: Open Policy Agent
 tags:
   - Policies
   - Standards
-type: Contract
+kind: contract
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
 common:
@@ -154,7 +154,7 @@ common:
     type: JSONSchema
   - url: json-ld/opa-context.jsonld
     name: OPA JSON-LD Context
-    type: JSON-LD
+    type: JSONLD
   - url: https://www.openpolicyagent.org/
     name: Website
     type: Website
@@ -166,7 +166,7 @@ common:
     type: Documentation
   - url: https://www.openpolicyagent.org/docs/latest/#running-opa
     name: Getting Started
-    type: Getting Started
+    type: GettingStarted
   - url: https://www.openpolicyagent.org/docs/latest/rest-api/#authentication
     name: Authentication
     type: Authentication
@@ -175,7 +175,7 @@ common:
     type: Errors
   - url: https://github.com/open-policy-agent
     name: GitHub Organization
-    type: GitHub Organization
+    type: GitHubOrganization
   - url: https://github.com/open-policy-agent/opa
     name: OPA GitHub Repository
     type: GitHubRepository
@@ -190,13 +190,13 @@ common:
     type: Slack
   - url: https://github.com/open-policy-agent/opa/blob/main/CHANGELOG.md
     name: Change Log
-    type: Change Log
+    type: ChangeLog
   - url: https://github.com/open-policy-agent/opa/security/policy
     name: Security
     type: Security
   - url: https://stackoverflow.com/questions/tagged/open-policy-agent
     name: Stack Overflow
-    type: Stack Overflow
+    type: StackOverflow
   - url: https://www.postman.com/api-evangelist/open-policy-agent/overview
     name: Postman Workspace
     type: PostmanWorkspace
