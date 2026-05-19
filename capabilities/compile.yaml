@@ -1,0 +1,100 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Compile API
+  description: 'Compile API. 1 operations. Lead operation: Partially Evaluate a Query. Self-contained Naftiko capability covering
+    one Open Policy Agent business surface.'
+  tags:
+  - Open Policy Agent
+  - Compile API
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    OPEN_POLICY_AGENT_API_KEY: OPEN_POLICY_AGENT_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: compile
+    baseUri: ''
+    description: Compile API business capability. Self-contained, no shared references.
+    resources:
+    - name: v1-compile
+      path: /v1/compile
+      operations:
+      - name: post
+        method: POST
+        description: Partially Evaluate a Query
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: pretty
+          in: query
+          type: boolean
+          description: Format response for human readability.
+        - name: explain
+          in: query
+          type: string
+          description: Return query explanation.
+        - name: metrics
+          in: query
+          type: boolean
+          description: Return performance metrics.
+        - name: instrument
+          in: query
+          type: boolean
+          description: Instrument query evaluation and return additional metrics.
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+  exposes:
+  - type: rest
+    namespace: compile-rest
+    port: 8080
+    description: REST adapter for Compile API. One Spectral-compliant resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/v1/compile
+      name: v1-compile
+      description: REST surface for v1-compile.
+      operations:
+      - method: POST
+        name: post
+        description: Partially Evaluate a Query
+        call: compile.post
+        with:
+          pretty: rest.pretty
+          explain: rest.explain
+          metrics: rest.metrics
+          instrument: rest.instrument
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: compile-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Compile API. One tool per consumed operation, routed inline through this capability's consumes
+      block.
+    tools:
+    - name: partially-evaluate-query
+      description: Partially Evaluate a Query
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: compile.post
+      with:
+        pretty: tools.pretty
+        explain: tools.explain
+        metrics: tools.metrics
+        instrument: tools.instrument
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
