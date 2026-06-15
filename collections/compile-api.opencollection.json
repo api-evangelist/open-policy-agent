@@ -1,0 +1,51 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Compile API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Partially Evaluate a Query",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "{{baseUrl}}/v1/compile",
+        "params": [
+          {
+            "name": "pretty",
+            "value": "",
+            "type": "query",
+            "description": "Format response for human readability."
+          },
+          {
+            "name": "explain",
+            "value": "",
+            "type": "query",
+            "description": "Return query explanation."
+          },
+          {
+            "name": "metrics",
+            "value": "",
+            "type": "query",
+            "description": "Return performance metrics."
+          },
+          {
+            "name": "instrument",
+            "value": "",
+            "type": "query",
+            "description": "Instrument query evaluation and return additional metrics."
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Partially evaluate a Rego query and obtain a simplified version of the policy."
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,60 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Health API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Health Check",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "{{baseUrl}}/health",
+        "params": [
+          {
+            "name": "bundles",
+            "value": "",
+            "type": "query",
+            "description": "Include bundle activation status in the health check."
+          },
+          {
+            "name": "plugins",
+            "value": "",
+            "type": "query",
+            "description": "Include plugin status in the health check."
+          },
+          {
+            "name": "exclude-plugin",
+            "value": "",
+            "type": "query",
+            "description": "Exclude specific plugins from the health check. Can be specified multiple times."
+          }
+        ]
+      },
+      "docs": "Perform a health check to verify that the server is operational."
+    },
+    {
+      "info": {
+        "name": "Custom Health Check",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "{{baseUrl}}/health/:rule-name",
+        "params": [
+          {
+            "name": "rule-name",
+            "value": "",
+            "type": "path",
+            "description": "Name of the rule to evaluate in the `system.health` package."
+          }
+        ]
+      },
+      "docs": "Perform a custom health check using the policy at `data.system.health.<rule-name>`."
+    }
+  ],
+  "bundled": true
+}

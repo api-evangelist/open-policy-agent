@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Status API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Get OPA Status",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "{{baseUrl}}/v1/status",
+        "params": [
+          {
+            "name": "pretty",
+            "value": "",
+            "type": "query",
+            "description": "Format response for human readability."
+          }
+        ]
+      },
+      "docs": "Retrieve OPA's current status information, including labels, bundles, metrics, and plugins."
+    }
+  ],
+  "bundled": true
+}

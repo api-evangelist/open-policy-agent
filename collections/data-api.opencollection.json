@@ -1,0 +1,236 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Data API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Get a Document",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "{{baseUrl}}/v1/data/:path",
+        "params": [
+          {
+            "name": "path",
+            "value": "",
+            "type": "path",
+            "description": "Path to the document"
+          },
+          {
+            "name": "input",
+            "value": "",
+            "type": "query",
+            "description": "Input document in JSON format"
+          },
+          {
+            "name": "pretty",
+            "value": "",
+            "type": "query",
+            "description": "Format response for human readability"
+          },
+          {
+            "name": "provenance",
+            "value": "",
+            "type": "query",
+            "description": "Include build/version information"
+          },
+          {
+            "name": "explain",
+            "value": "",
+            "type": "query",
+            "description": "Return query explanation"
+          },
+          {
+            "name": "metrics",
+            "value": "",
+            "type": "query",
+            "description": "Return performance metrics"
+          },
+          {
+            "name": "instrument",
+            "value": "",
+            "type": "query",
+            "description": "Instrument query evaluation"
+          },
+          {
+            "name": "strict-builtin-errors",
+            "value": "",
+            "type": "query",
+            "description": "Treat built-in function call errors as fatal"
+          }
+        ]
+      },
+      "docs": "Retrieve a document from the specified path."
+    },
+    {
+      "info": {
+        "name": "Get a Document (with Input)",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "{{baseUrl}}/v1/data/:path",
+        "params": [
+          {
+            "name": "path",
+            "value": "",
+            "type": "path",
+            "description": "Path to the document"
+          },
+          {
+            "name": "pretty",
+            "value": "",
+            "type": "query",
+            "description": "Format response for human readability"
+          },
+          {
+            "name": "provenance",
+            "value": "",
+            "type": "query",
+            "description": "Include build/version information"
+          },
+          {
+            "name": "explain",
+            "value": "",
+            "type": "query",
+            "description": "Return query explanation"
+          },
+          {
+            "name": "metrics",
+            "value": "",
+            "type": "query",
+            "description": "Return performance metrics"
+          },
+          {
+            "name": "instrument",
+            "value": "",
+            "type": "query",
+            "description": "Instrument query evaluation"
+          },
+          {
+            "name": "strict-builtin-errors",
+            "value": "",
+            "type": "query",
+            "description": "Treat built-in function call errors as fatal"
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Retrieve a document that requires an input document."
+    },
+    {
+      "info": {
+        "name": "Create or Overwrite a Document",
+        "type": "http"
+      },
+      "http": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/v1/data/:path",
+        "params": [
+          {
+            "name": "path",
+            "value": "",
+            "type": "path",
+            "description": "Path to the document"
+          },
+          {
+            "name": "metrics",
+            "value": "",
+            "type": "query",
+            "description": "Return performance metrics"
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Create or overwrite a document at the specified path."
+    },
+    {
+      "info": {
+        "name": "Patch a Document",
+        "type": "http"
+      },
+      "http": {
+        "method": "PATCH",
+        "url": "{{baseUrl}}/v1/data/:path",
+        "params": [
+          {
+            "name": "path",
+            "value": "",
+            "type": "path",
+            "description": "Path to the document"
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Update a document using JSON Patch."
+    },
+    {
+      "info": {
+        "name": "Delete a Document",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "{{baseUrl}}/v1/data/:path",
+        "params": [
+          {
+            "name": "path",
+            "value": "",
+            "type": "path",
+            "description": "Path to the document"
+          },
+          {
+            "name": "metrics",
+            "value": "",
+            "type": "query",
+            "description": "Return performance metrics"
+          }
+        ]
+      },
+      "docs": "Delete a document at the specified path."
+    },
+    {
+      "info": {
+        "name": "Get a Document (Webhook)",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "{{baseUrl}}/v0/data/:path",
+        "params": [
+          {
+            "name": "path",
+            "value": "",
+            "type": "path",
+            "description": "Path to the document"
+          },
+          {
+            "name": "pretty",
+            "value": "",
+            "type": "query",
+            "description": "Format response for human readability"
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Retrieve a document from a webhook."
+    }
+  ],
+  "bundled": true
+}

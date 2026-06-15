@@ -1,0 +1,105 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Query API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Execute a Simple Query",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "{{baseUrl}}/",
+        "params": [
+          {
+            "name": "pretty",
+            "value": "",
+            "type": "query",
+            "description": "Format response for human readability"
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Execute a simple query using the default decision (`/data/system/main`)."
+    },
+    {
+      "info": {
+        "name": "Execute an Ad-hoc Query (GET)",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "{{baseUrl}}/v1/query",
+        "params": [
+          {
+            "name": "q",
+            "value": "",
+            "type": "query",
+            "description": "Ad-hoc query to execute (URL encoded)"
+          },
+          {
+            "name": "pretty",
+            "value": "",
+            "type": "query",
+            "description": "Format response for human readability"
+          },
+          {
+            "name": "explain",
+            "value": "",
+            "type": "query",
+            "description": "Return query explanation"
+          },
+          {
+            "name": "metrics",
+            "value": "",
+            "type": "query",
+            "description": "Return query performance metrics"
+          }
+        ]
+      },
+      "docs": "Execute an ad-hoc query by providing the query as a URL parameter."
+    },
+    {
+      "info": {
+        "name": "Execute an Ad-hoc Query (POST)",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "{{baseUrl}}/v1/query",
+        "params": [
+          {
+            "name": "pretty",
+            "value": "",
+            "type": "query",
+            "description": "Format response for human readability"
+          },
+          {
+            "name": "explain",
+            "value": "",
+            "type": "query",
+            "description": "Return query explanation"
+          },
+          {
+            "name": "metrics",
+            "value": "",
+            "type": "query",
+            "description": "Return query performance metrics"
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Execute an ad-hoc query by providing the query in the request body."
+    }
+  ],
+  "bundled": true
+}

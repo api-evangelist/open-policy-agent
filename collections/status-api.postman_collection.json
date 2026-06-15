@@ -1,0 +1,146 @@
+{
+  "item": [
+    {
+      "id": "31a8f851-c7ee-496d-b6c0-164c764316b4",
+      "name": "Get OPA Status",
+      "request": {
+        "name": "Get OPA Status",
+        "description": {
+          "content": "Retrieve OPA's current status information, including labels, bundles, metrics, and plugins.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "v1",
+            "status"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "pretty",
+              "value": "<boolean>",
+              "description": "Format response for human readability."
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "d92f0626-fc1e-48dd-8936-ab84a4109703",
+          "name": "Status information retrieved successfully.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v1",
+                "status"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "pretty",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"result\": {\n    \"labels\": {\n      \"id\": \"string\",\n      \"version\": \"string\"\n    },\n    \"bundles\": {\n      \"key_0\": {\n        \"name\": \"string\",\n        \"active_revision\": \"string\",\n        \"last_successful_activation\": \"1957-03-26T16:40:06.900Z\",\n        \"last_successful_download\": \"1988-07-14T22:50:30.535Z\",\n        \"last_successful_request\": \"1957-07-02T20:42:50.991Z\",\n        \"last_request\": \"1985-02-26T05:42:16.889Z\",\n        \"metrics\": {\n          \"key_0\": 6239.785258679573,\n          \"key_1\": 4074.904353450618,\n          \"key_2\": 2982.633576014907\n        }\n      },\n      \"key_1\": {\n        \"name\": \"string\",\n        \"active_revision\": \"string\",\n        \"last_successful_activation\": \"1963-08-18T19:51:32.862Z\",\n        \"last_successful_download\": \"1980-01-16T05:36:14.852Z\",\n        \"last_successful_request\": \"1975-11-11T03:33:50.685Z\",\n        \"last_request\": \"1966-01-26T12:14:11.906Z\",\n        \"metrics\": {\n          \"key_0\": 5646.422555972843,\n          \"key_1\": 5229.63077298438,\n          \"key_2\": 230.96996866892482,\n          \"key_3\": 8542.281309690381\n        }\n      }\n    },\n    \"metrics\": {\n      \"key_0\": {},\n      \"key_1\": {}\n    },\n    \"plugins\": {\n      \"key_0\": {\n        \"state\": \"OK\"\n      },\n      \"key_1\": {\n        \"state\": \"OK\"\n      }\n    }\n  }\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "dee3355d-ad48-428c-8fac-317af934e33a",
+          "name": "Internal server error.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v1",
+                "status"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "pretty",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"error\": \"string\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "00e008a2-61a5-4a7e-9202-ee64ef48c96a",
+    "name": "Status API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for accessing OPA (Open Policy Agent) status information via a pull-based mechanism.",
+      "type": "text/plain"
+    }
+  }
+}

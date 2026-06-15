@@ -1,0 +1,146 @@
+{
+  "item": [
+    {
+      "id": "806cdadd-c95e-497a-9b74-aaade58c427d",
+      "name": "Get OPA Configuration",
+      "request": {
+        "name": "Get OPA Configuration",
+        "description": {
+          "content": "Retrieve OPA's active configuration. Credentials and sensitive keys are omitted from the response.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "v1",
+            "config"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "pretty",
+              "value": "<boolean>",
+              "description": "Format response for human readability."
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "31072d74-3a97-437f-9ec5-dc2173a56ab9",
+          "name": "Configuration retrieved successfully.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v1",
+                "config"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "pretty",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"result\": {\n    \"services\": {\n      \"key_0\": {\n        \"url\": \"string\"\n      }\n    },\n    \"labels\": {\n      \"id\": \"string\",\n      \"version\": \"string\"\n    },\n    \"keys\": {\n      \"key_0\": {\n        \"scope\": \"string\"\n      }\n    },\n    \"decision_logs\": {\n      \"service\": \"string\"\n    },\n    \"status\": {\n      \"service\": \"string\"\n    },\n    \"bundles\": {\n      \"key_0\": {\n        \"service\": \"string\"\n      },\n      \"key_1\": {\n        \"service\": \"string\"\n      }\n    },\n    \"default_authorization_decision\": \"string\",\n    \"default_decision\": \"string\"\n  }\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "47929d5c-68e2-46e6-beed-dccf49252c05",
+          "name": "Internal server error.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v1",
+                "config"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "pretty",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"error\": \"string\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "eb2fe755-dca5-4a5e-ab2a-9dbc6e65ccd3",
+    "name": "Config API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for retrieving OPA's active configuration, including discovered configurations.",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,783 @@
+{
+  "item": [
+    {
+      "id": "ec819f90-8e7e-4ada-b43a-70f345d5e52e",
+      "name": "Execute a Simple Query",
+      "request": {
+        "name": "Execute a Simple Query",
+        "description": {
+          "content": "Execute a simple query using the default decision (`/data/system/main`).",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            ""
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "pretty",
+              "value": "<boolean>",
+              "description": "Format response for human readability"
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "<object>",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "11a42fac-4e54-4669-ae79-68da50005679",
+          "name": "Query executed successfully",
+          "originalRequest": {
+            "url": {
+              "path": [
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "pretty",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "1b896d0a-ce0b-4c3f-9583-d63ba3c1dc9c",
+          "name": "Bad request",
+          "originalRequest": {
+            "url": {
+              "path": [
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "pretty",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "192b2b28-a94b-4aa0-bc2e-16f934e81802",
+          "name": "Document not found",
+          "originalRequest": {
+            "url": {
+              "path": [
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "pretty",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Not Found",
+          "code": 404,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "9b0475e3-45f3-452e-ac10-ea88f3aa39c5",
+          "name": "Server error",
+          "originalRequest": {
+            "url": {
+              "path": [
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "pretty",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "92dfb221-de2d-4287-b9c2-a588884ab54f",
+      "name": "Execute an Ad-hoc Query (GET)",
+      "request": {
+        "name": "Execute an Ad-hoc Query (GET)",
+        "description": {
+          "content": "Execute an ad-hoc query by providing the query as a URL parameter.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "v1",
+            "query"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "q",
+              "value": "<string>",
+              "description": "(Required) Ad-hoc query to execute (URL encoded)"
+            },
+            {
+              "disabled": false,
+              "key": "pretty",
+              "value": "<boolean>",
+              "description": "Format response for human readability"
+            },
+            {
+              "disabled": false,
+              "key": "explain",
+              "value": "<string>",
+              "description": "Return query explanation"
+            },
+            {
+              "disabled": false,
+              "key": "metrics",
+              "value": "<boolean>",
+              "description": "Return query performance metrics"
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "a6e9e36d-acce-4a74-a9b0-70f67f652141",
+          "name": "Query executed successfully",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v1",
+                "query"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "key": "pretty",
+                  "value": "<boolean>"
+                },
+                {
+                  "key": "explain",
+                  "value": "<string>"
+                },
+                {
+                  "key": "metrics",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "1fc91fe5-1b76-4d57-8324-de61c2f45aa5",
+          "name": "Bad request",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v1",
+                "query"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "key": "pretty",
+                  "value": "<boolean>"
+                },
+                {
+                  "key": "explain",
+                  "value": "<string>"
+                },
+                {
+                  "key": "metrics",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "7c8e3b12-a709-4323-8a0b-9858f2500bb5",
+          "name": "Server error",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v1",
+                "query"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "key": "pretty",
+                  "value": "<boolean>"
+                },
+                {
+                  "key": "explain",
+                  "value": "<string>"
+                },
+                {
+                  "key": "metrics",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "1143d103-8989-49fa-8b47-3231732a6f74",
+          "name": "Streaming not implemented",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v1",
+                "query"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "key": "pretty",
+                  "value": "<boolean>"
+                },
+                {
+                  "key": "explain",
+                  "value": "<string>"
+                },
+                {
+                  "key": "metrics",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Not Implemented",
+          "code": 501,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "b9a02e1f-c736-44f4-8d77-8cead366d745",
+      "name": "Execute an Ad-hoc Query (POST)",
+      "request": {
+        "name": "Execute an Ad-hoc Query (POST)",
+        "description": {
+          "content": "Execute an ad-hoc query by providing the query in the request body.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "v1",
+            "query"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "pretty",
+              "value": "<boolean>",
+              "description": "Format response for human readability"
+            },
+            {
+              "disabled": false,
+              "key": "explain",
+              "value": "<string>",
+              "description": "Return query explanation"
+            },
+            {
+              "disabled": false,
+              "key": "metrics",
+              "value": "<boolean>",
+              "description": "Return query performance metrics"
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"query\": \"<string>\",\n  \"input\": \"<object>\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "25e74d82-4038-4ec5-8b5a-ad1967394024",
+          "name": "Query executed successfully",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v1",
+                "query"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "pretty",
+                  "value": "<boolean>"
+                },
+                {
+                  "key": "explain",
+                  "value": "<string>"
+                },
+                {
+                  "key": "metrics",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"<string>\",\n  \"input\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "48680a1d-fdac-40cb-a857-4c99dacaba88",
+          "name": "Bad request",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v1",
+                "query"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "pretty",
+                  "value": "<boolean>"
+                },
+                {
+                  "key": "explain",
+                  "value": "<string>"
+                },
+                {
+                  "key": "metrics",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"<string>\",\n  \"input\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "e57bccd6-6b14-48d0-8d63-9d0f32920962",
+          "name": "Server error",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v1",
+                "query"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "pretty",
+                  "value": "<boolean>"
+                },
+                {
+                  "key": "explain",
+                  "value": "<string>"
+                },
+                {
+                  "key": "metrics",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"<string>\",\n  \"input\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "fd97de78-9589-4143-a29f-9b1f900c1e29",
+          "name": "Streaming not implemented",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v1",
+                "query"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "pretty",
+                  "value": "<boolean>"
+                },
+                {
+                  "key": "explain",
+                  "value": "<string>"
+                },
+                {
+                  "key": "metrics",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"<string>\",\n  \"input\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Not Implemented",
+          "code": 501,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "e12045f5-122c-41b8-b685-8a94df41db29",
+    "name": "Query API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for executing simple and ad-hoc queries in OPA (Open Policy Agent).",
+      "type": "text/plain"
+    }
+  }
+}

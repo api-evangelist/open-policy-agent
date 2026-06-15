@@ -1,0 +1,108 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Policy API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "List Policies",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "{{baseUrl}}/v1/policies"
+      },
+      "docs": "List all policy modules."
+    },
+    {
+      "info": {
+        "name": "Get a Policy",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "{{baseUrl}}/v1/policies/:id",
+        "params": [
+          {
+            "name": "id",
+            "value": "",
+            "type": "path",
+            "description": "Policy module identifier"
+          },
+          {
+            "name": "pretty",
+            "value": "",
+            "type": "query",
+            "description": "Format response for human readability"
+          }
+        ]
+      },
+      "docs": "Retrieve a policy module by its ID."
+    },
+    {
+      "info": {
+        "name": "Create or Update a Policy",
+        "type": "http"
+      },
+      "http": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/v1/policies/:id",
+        "params": [
+          {
+            "name": "id",
+            "value": "",
+            "type": "path",
+            "description": "Policy module identifier"
+          },
+          {
+            "name": "pretty",
+            "value": "",
+            "type": "query",
+            "description": "Format response for human readability"
+          },
+          {
+            "name": "metrics",
+            "value": "",
+            "type": "query",
+            "description": "Return compiler performance metrics"
+          }
+        ]
+      },
+      "docs": "Create or update a policy module."
+    },
+    {
+      "info": {
+        "name": "Delete a Policy",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "{{baseUrl}}/v1/policies/:id",
+        "params": [
+          {
+            "name": "id",
+            "value": "",
+            "type": "path",
+            "description": "Policy module identifier"
+          },
+          {
+            "name": "pretty",
+            "value": "",
+            "type": "query",
+            "description": "Format response for human readability"
+          },
+          {
+            "name": "metrics",
+            "value": "",
+            "type": "query",
+            "description": "Return compiler performance metrics"
+          }
+        ]
+      },
+      "docs": "Delete a policy module by its ID."
+    }
+  ],
+  "bundled": true
+}
