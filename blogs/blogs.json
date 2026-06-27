@@ -2,20 +2,17 @@
   "repo": "open-policy-agent",
   "feeds": [
     {
-      "source": "https://blog.openpolicyagent.org/feed",
-      "feed_url": "https://blog.openpolicyagent.org/feed",
+      "source": "https://medium.com/feed/open-policy-agent",
+      "feed_url": "https://medium.com/feed/open-policy-agent",
       "title": "",
       "saved": 0,
       "method": "feed"
     },
     {
       "source": "https://blog.openpolicyagent.org/",
-      "feed_url": "https://blog.openpolicyagent.org/feed",
-      "title": "",
-      "saved": 0,
-      "method": "discovered"
+      "error": "URLError"
     }
   ],
   "post_count": 13,
-  "fetched": "2026-06-14T20:42:17Z"
+  "fetched": "2026-06-27T12:03:07Z"
 }
