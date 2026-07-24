@@ -3,13 +3,13 @@ info:
   title: Compile API
   description: API for partially evaluating Rego queries in OPA (Open Policy Agent).
   version: 1.0.0
+tags:
+- name: Compile
 paths:
   /v1/compile:
     post:
       summary: Partially Evaluate a Query
-      description: >-
-        Partially evaluate a Rego query and obtain a simplified version of the
-        policy.
+      description: Partially evaluate a Rego query and obtain a simplified version of the policy.
       requestBody:
         description: Request to partially evaluate a query.
         required: true
@@ -44,37 +44,37 @@ paths:
                   items:
                     type: string
                   example:
-                    - data.reports
+                  - data.reports
       parameters:
-        - name: pretty
-          in: query
-          required: false
-          description: Format response for human readability.
-          schema:
-            type: boolean
-        - name: explain
-          in: query
-          required: false
-          description: Return query explanation.
-          schema:
-            type: string
-            enum:
-              - notes
-              - fails
-              - full
-              - debug
-        - name: metrics
-          in: query
-          required: false
-          description: Return performance metrics.
-          schema:
-            type: boolean
-        - name: instrument
-          in: query
-          required: false
-          description: Instrument query evaluation and return additional metrics.
-          schema:
-            type: boolean
+      - name: pretty
+        in: query
+        required: false
+        description: Format response for human readability.
+        schema:
+          type: boolean
+      - name: explain
+        in: query
+        required: false
+        description: Return query explanation.
+        schema:
+          type: string
+          enum:
+          - notes
+          - fails
+          - full
+          - debug
+      - name: metrics
+        in: query
+        required: false
+        description: Return performance metrics.
+        schema:
+          type: boolean
+      - name: instrument
+        in: query
+        required: false
+        description: Instrument query evaluation and return additional metrics.
+        schema:
+          type: boolean
       responses:
         '200':
           description: Query partially evaluated successfully.
@@ -112,55 +112,33 @@ paths:
               value:
                 result:
                   queries:
-                    - []
+                  - []
             partially_evaluated:
               summary: Partially evaluated query
               value:
                 result:
                   queries:
-                    - - index: 0
-                        terms:
-                          - type: ref
-                            value:
-                              - type: var
-                                value: gte
-                          - type: number
-                            value: 4
-                          - type: ref
-                            value:
-                              - type: var
-                                value: data
-                              - type: string
-                                value: reports
-                              - type: var
-                                value: i1
-                              - type: string
-                                value: clearance_level
+                  - - index: 0
+                      terms:
+                      - type: ref
+                        value:
+                        - type: var
+                          value: gte
+                      - type: number
+                        value: 4
+                      - type: ref
+                        value:
+                        - type: var
+                          value: data
+                        - type: string
+                          value: reports
+                        - type: var
+                          value: i1
+                        - type: string
+                          value: clearance_level
         '400':
           description: Bad request due to malformed input or query.
         '500':
           description: Internal server error.
-components:
-  schemas:
-    PartialEvaluationResult:
-      type: object
-      properties:
-        queries:
-          type: array
-          description: Partially evaluated queries.
-          items:
-            type: array
-            items:
-              type: object
-              properties:
-                index:
-                  type: integer
-                terms:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      type:
-                        type: string
-                      value:
-                        type: object
+      tags:
+      - Compile
