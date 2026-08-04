@@ -1,0 +1,123 @@
+openapi: 3.1.0
+info:
+  title: Config API
+  description: >-
+    API for retrieving OPA's active configuration, including discovered
+    configurations.
+  version: 1.0.0
+paths:
+  /v1/config:
+    get:
+      summary: Get OPA Configuration
+      description: >-
+        Retrieve OPA's active configuration. Credentials and sensitive keys are
+        omitted from the response.
+      parameters:
+        - name: pretty
+          in: query
+          required: false
+          description: Format response for human readability.
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: Configuration retrieved successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: object
+                    description: OPA's active configuration.
+                    properties:
+                      services:
+                        type: object
+                        description: Service configurations.
+                        additionalProperties:
+                          type: object
+                          properties:
+                            url:
+                              type: string
+                              description: URL of the service.
+                      labels:
+                        type: object
+                        description: Labels associated with the OPA instance.
+                        properties:
+                          id:
+                            type: string
+                            description: Identifier for the instance.
+                          version:
+                            type: string
+                            description: OPA version.
+                      keys:
+                        type: object
+                        description: Key configurations.
+                        additionalProperties:
+                          type: object
+                          properties:
+                            scope:
+                              type: string
+                              description: Key scope.
+                      decision_logs:
+                        type: object
+                        description: Decision logs configuration.
+                        properties:
+                          service:
+                            type: string
+                            description: Service used for decision logs.
+                      status:
+                        type: object
+                        description: Status service configuration.
+                        properties:
+                          service:
+                            type: string
+                            description: Service used for status updates.
+                      bundles:
+                        type: object
+                        description: Bundle configurations.
+                        additionalProperties:
+                          type: object
+                          properties:
+                            service:
+                              type: string
+                              description: Service associated with the bundle.
+                      default_authorization_decision:
+                        type: string
+                        description: Default authorization decision path.
+                      default_decision:
+                        type: string
+                        description: Default decision path.
+        '500':
+          description: Internal server error.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Error message.
+      examples:
+        successful_response:
+          summary: Successful Response
+          value:
+            result:
+              services:
+                acmecorp:
+                  url: https://example.com/control-plane-api/v1
+              labels:
+                id: test-id
+                version: 0.27.0
+              keys:
+                global_key:
+                  scope: read
+              decision_logs:
+                service: acmecorp
+              status:
+                service: acmecorp
+              bundles:
+                authz:
+                  service: acmecorp
+              default_authorization_decision: /system/authz/allow
+              default_decision: /system/main

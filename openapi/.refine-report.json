@@ -1,0 +1,28 @@
+{
+  "provider": "open-policy-agent",
+  "sources": [
+    "open-policy-agent-compile-api-openapi.yml",
+    "open-policy-agent-config-api-openapi.yml",
+    "open-policy-agent-data-api-openapi.yml",
+    "open-policy-agent-health-api-openapi.yml",
+    "open-policy-agent-policies-api-openapi.yml",
+    "open-policy-agent-query-api-api-openapi.yml",
+    "open-policy-agent-query-api-openapi.yml",
+    "open-policy-agent-status-api-openapi.yml"
+  ],
+  "outputs": [
+    "open-policy-agent-compile-api-openapi.yml",
+    "open-policy-agent-config-api-openapi.yml",
+    "open-policy-agent-data-api-openapi.yml",
+    "open-policy-agent-health-api-openapi.yml",
+    "open-policy-agent-policies-api-openapi.yml",
+    "open-policy-agent-query-api-api-openapi.yml",
+    "open-policy-agent-query-api-openapi.yml",
+    "open-policy-agent-status-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
