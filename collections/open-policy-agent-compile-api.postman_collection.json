@@ -1,0 +1,277 @@
+{
+  "item": [
+    {
+      "id": "e2c3b0c7-117c-4aba-b418-78f5f5a4f739",
+      "name": "Compile",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "36bb22e0-59e2-4ccc-b507-6f844742f2bb",
+          "name": "Partially Evaluate a Query",
+          "request": {
+            "name": "Partially Evaluate a Query",
+            "description": {
+              "content": "Partially evaluate a Rego query and obtain a simplified version of the policy.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "compile"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "pretty",
+                  "value": "<boolean>",
+                  "description": "Format response for human readability."
+                },
+                {
+                  "disabled": false,
+                  "key": "explain",
+                  "value": "<string>",
+                  "description": "Return query explanation."
+                },
+                {
+                  "disabled": false,
+                  "key": "metrics",
+                  "value": "<boolean>",
+                  "description": "Return performance metrics."
+                },
+                {
+                  "disabled": false,
+                  "key": "instrument",
+                  "value": "<boolean>",
+                  "description": "Instrument query evaluation and return additional metrics."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"<string>\",\n  \"input\": \"<object>\",\n  \"options\": {\n    \"disableInlining\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"unknowns\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "75f6e63e-4c97-478c-bc7b-c5d71da058d8",
+              "name": "Query partially evaluated successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "compile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pretty",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "explain",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "metrics",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "instrument",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"query\": \"data.example.allow == true\",\n  \"input\": {\n    \"subject\": {\n      \"clearance_level\": 4\n    }\n  },\n  \"options\": {\n    \"disableInlining\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"unknowns\": [\n    \"data.reports\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"result\": {\n    \"queries\": [\n      [\n        {\n          \"index\": 9061,\n          \"terms\": [\n            {\n              \"type\": \"string\",\n              \"value\": {}\n            },\n            {\n              \"type\": \"string\",\n              \"value\": {}\n            }\n          ]\n        },\n        {\n          \"index\": 9311,\n          \"terms\": [\n            {\n              \"type\": \"string\",\n              \"value\": {}\n            },\n            {\n              \"type\": \"string\",\n              \"value\": {}\n            }\n          ]\n        }\n      ],\n      [\n        {\n          \"index\": 519,\n          \"terms\": [\n            {\n              \"type\": \"string\",\n              \"value\": {}\n            },\n            {\n              \"type\": \"string\",\n              \"value\": {}\n            }\n          ]\n        },\n        {\n          \"index\": 8314,\n          \"terms\": [\n            {\n              \"type\": \"string\",\n              \"value\": {}\n            },\n            {\n              \"type\": \"string\",\n              \"value\": {}\n            }\n          ]\n        }\n      ]\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "23cdedf7-0e74-4ca1-83bc-8959df24f057",
+              "name": "Bad request due to malformed input or query.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "compile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pretty",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "explain",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "metrics",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "instrument",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"query\": \"data.example.allow == true\",\n  \"input\": {\n    \"subject\": {\n      \"clearance_level\": 4\n    }\n  },\n  \"options\": {\n    \"disableInlining\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"unknowns\": [\n    \"data.reports\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b108c30c-f0fd-4351-93b6-e36bd149d056",
+              "name": "Internal server error.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "compile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pretty",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "explain",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "metrics",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "instrument",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"query\": \"data.example.allow == true\",\n  \"input\": {\n    \"subject\": {\n      \"clearance_level\": 4\n    }\n  },\n  \"options\": {\n    \"disableInlining\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"unknowns\": [\n    \"data.reports\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "dabe8252-e0a7-4c10-ad3d-37c90328f97f",
+    "name": "Compile API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for partially evaluating Rego queries in OPA (Open Policy Agent).",
+      "type": "text/plain"
+    }
+  }
+}

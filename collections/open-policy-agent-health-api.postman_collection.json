@@ -1,0 +1,314 @@
+{
+  "item": [
+    {
+      "id": "e992cf8f-e6db-4572-ab36-3936189036fd",
+      "name": "Health",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "99dbad62-0896-47b5-8d78-4687c860ac5e",
+          "name": "Health Check",
+          "request": {
+            "name": "Health Check",
+            "description": {
+              "content": "Perform a health check to verify that the server is operational.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "health"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "bundles",
+                  "value": "<boolean>",
+                  "description": "Include bundle activation status in the health check."
+                },
+                {
+                  "disabled": false,
+                  "key": "plugins",
+                  "value": "<boolean>",
+                  "description": "Include plugin status in the health check."
+                },
+                {
+                  "disabled": false,
+                  "key": "exclude-plugin",
+                  "value": "<string>",
+                  "description": "Exclude specific plugins from the health check. Can be specified multiple times."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5e7b1430-e8ff-41e7-9814-6c9199d301c1",
+              "name": "OPA service is healthy.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "health"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "bundles",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "plugins",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "exclude-plugin",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9171dc5b-8557-4a00-9f17-67304097760f",
+              "name": "OPA service is not healthy.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "health"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "bundles",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "plugins",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "exclude-plugin",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5624653f-5749-4670-a193-70799d716d7a",
+          "name": "Custom Health Check",
+          "request": {
+            "name": "Custom Health Check",
+            "description": {
+              "content": "Perform a custom health check using the policy at `data.system.health.<rule-name>`.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "health",
+                ":rule-name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "rule-name",
+                  "description": "(Required) Name of the rule to evaluate in the `system.health` package."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "44f64fbd-7512-4a20-8f9f-7ced21f44ddb",
+              "name": "OPA service is healthy.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "health",
+                    ":rule-name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "rule-name",
+                      "description": "(Required) Name of the rule to evaluate in the `system.health` package."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a0c38907-eb35-4d97-8f31-7fd95493215e",
+              "name": "OPA service is not healthy.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "health",
+                    ":rule-name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "rule-name",
+                      "description": "(Required) Name of the rule to evaluate in the `system.health` package."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "a2244072-1a6a-4670-bbdc-b7845fd7f266",
+    "name": "Compile Health API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for partially evaluating Rego queries in OPA (Open Policy Agent).",
+      "type": "text/plain"
+    }
+  }
+}
