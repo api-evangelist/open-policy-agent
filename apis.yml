@@ -197,7 +197,7 @@ apis:
   - type: BrunoCollection
     url: status/bruno.json
 - aid: open-policy-agent:open-policy-agent-query-api-api
-  name: Open Policy Agent Query API API
+  name: Open Policy Agent Query API
   description: The Query API API from Open Policy Agent — 1 operation(s) for query api.
   humanURL: https://www.openpolicyagent.org/docs/latest/rest-api/#policy-api
   tags:
@@ -315,8 +315,8 @@ apis:
     url: status/bruno.json
 name: Open Policy Agent
 tags:
-  - Policies
-  - Standards
+- Policies
+- Standards
 kind: contract
 deliveryModel:
   model: unknown
@@ -345,93 +345,92 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/open-policy-agent.png
 access: 3rd-Party
 common:
-  - type: AgenticAccess
-    url: agentic-access/open-policy-agent-agentic-access.yml
-  - type: VulnerabilityDisclosure
-    url: security/open-policy-agent-vulnerability-disclosure.yml
-  - type: DomainSecurity
-    url: security/open-policy-agent-domain-security.yml
-  - type: LinkedIn
-    url: https://www.linkedin.com/company/open-policy-agent
-  - url: json-schema/opa-policy-schema.json
-    name: OPA Policy Schema
-    type: JSONSchema
-  - url: json-ld/opa-context.jsonld
-    name: OPA JSON-LD Context
-    type: JSONLD
-  - url: https://www.openpolicyagent.org/
-    name: Website
-    type: Website
-  - url: https://www.openpolicyagent.org/docs/latest/
-    name: Documentation
-    type: Documentation
-  - url: https://www.openpolicyagent.org/docs/latest/rest-api/
-    name: REST API Documentation
-    type: Documentation
-  - url: https://www.openpolicyagent.org/docs/latest/#running-opa
-    name: Getting Started
-    type: GettingStarted
-  - url: https://www.openpolicyagent.org/docs/latest/rest-api/#authentication
-    name: Authentication
-    type: Authentication
-  - url: https://www.openpolicyagent.org/docs/latest/rest-api/#errors
-    name: Errors
-    type: ErrorCodes
-  - url: https://github.com/open-policy-agent
-    name: GitHub Organization
-    type: GitHubOrganization
-  - url: https://github.com/open-policy-agent/opa
-    name: OPA GitHub Repository
-    type: GitHubRepository
-  - url: https://blog.openpolicyagent.org/
-    name: Blog
-    type: Blog
-  - url: https://www.openpolicyagent.org/community/
-    name: Community
-    type: Community
-  - url: https://slack.openpolicyagent.org/
-    name: Slack
-    type: Slack
-  - url: https://github.com/open-policy-agent/opa/blob/main/CHANGELOG.md
-    name: Change Log
-    type: ChangeLog
-  - url: https://github.com/open-policy-agent/opa/security/policy
-    name: Security
-    type: Security
-  - url: https://stackoverflow.com/questions/tagged/open-policy-agent
-    name: Stack Overflow
-    type: StackOverflow
-  - url: https://www.postman.com/api-evangelist/open-policy-agent/overview
-    name: Postman Workspace
-    type: PostmanWorkspace
-  - url: https://github.com/api-search/open-policy-agent
-    name: GitHub Repository
-    type: GitHubRepository
-  - type: Integrations
-    url: https://www.openpolicyagent.org/ecosystem
+- type: AgenticAccess
+  url: agentic-access/open-policy-agent-agentic-access.yml
+- type: VulnerabilityDisclosure
+  url: security/open-policy-agent-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/open-policy-agent-domain-security.yml
+- type: LinkedIn
+  url: https://www.linkedin.com/company/open-policy-agent
+- url: json-schema/opa-policy-schema.json
+  name: OPA Policy Schema
+  type: JSONSchema
+- url: json-ld/opa-context.jsonld
+  name: OPA JSON-LD Context
+  type: JSONLD
+- url: https://www.openpolicyagent.org/
+  name: Website
+  type: Website
+- url: https://www.openpolicyagent.org/docs/latest/
+  name: Documentation
+  type: Documentation
+- url: https://www.openpolicyagent.org/docs/latest/rest-api/
+  name: REST API Documentation
+  type: Documentation
+- url: https://www.openpolicyagent.org/docs/latest/#running-opa
+  name: Getting Started
+  type: GettingStarted
+- url: https://www.openpolicyagent.org/docs/latest/rest-api/#authentication
+  name: Authentication
+  type: Authentication
+- url: https://www.openpolicyagent.org/docs/latest/rest-api/#errors
+  name: Errors
+  type: ErrorCodes
+- url: https://github.com/open-policy-agent
+  name: GitHub Organization
+  type: GitHubOrganization
+- url: https://github.com/open-policy-agent/opa
+  name: OPA GitHub Repository
+  type: GitHubRepository
+- url: https://blog.openpolicyagent.org/
+  name: Blog
+  type: Blog
+- url: https://www.openpolicyagent.org/community/
+  name: Community
+  type: Community
+- url: https://slack.openpolicyagent.org/
+  name: Slack
+  type: Slack
+- url: https://github.com/open-policy-agent/opa/blob/main/CHANGELOG.md
+  name: Change Log
+  type: ChangeLog
+- url: https://github.com/open-policy-agent/opa/security/policy
+  name: Security
+  type: Security
+- url: https://stackoverflow.com/questions/tagged/open-policy-agent
+  name: Stack Overflow
+  type: StackOverflow
+- url: https://www.postman.com/api-evangelist/open-policy-agent/overview
+  name: Postman Workspace
+  type: PostmanWorkspace
+- url: https://github.com/api-search/open-policy-agent
+  name: GitHub Repository
+  type: GitHubRepository
+- type: Integrations
+  url: https://www.openpolicyagent.org/ecosystem
 created: '2024-11-18'
-modified: '2026-05-19'
+modified: '2026-09-16'
 position: Consuming
-description: >-
-  Open Policy Agent (OPA) is an open-source project that provides a flexible and powerful policy engine for cloud-native
-  environments. OPA enables users to define and enforce policies across their infrastructure, applications, and services
-  through a declarative language called Rego. OPA integrates seamlessly with popular tools and frameworks like
-  Kubernetes, Istio, and Envoy, making it easy to implement fine-grained access control, security, and compliance
-  policies.
+description: Open Policy Agent (OPA) is an open-source project that provides a flexible and powerful policy
+  engine for cloud-native environments. OPA enables users to define and enforce policies across their
+  infrastructure, applications, and services through a declarative language called Rego. OPA integrates
+  seamlessly with popular tools and frameworks like Kubernetes, Istio, and Envoy, making it easy to implement
+  fine-grained access control, security, and compliance policies.
 integrations:
-  - name: OPA
-  - name: GitHub
-  - name: Slack
-  - name: JavaScript
-  - name: Java
-  - name: C#
-  - name: Swift
-  - name: Clojure
-  - name: Rust
-  - name: PHP
-  - name: Zig
-  - name: CNCF
+- name: OPA
+- name: GitHub
+- name: Slack
+- name: JavaScript
+- name: Java
+- name: C#
+- name: Swift
+- name: Clojure
+- name: Rust
+- name: PHP
+- name: Zig
+- name: CNCF
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com
 specificationVersion: '0.23'
