@@ -1,7 +1,7 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Compile Config API
-  description: API for partially evaluating Rego queries in OPA (Open Policy Agent).
+  title: Config API
+  description: API for retrieving OPA's active configuration, including discovered configurations.
   version: 1.0.0
 tags:
 - name: Config
@@ -121,3 +121,5 @@ paths:
               default_decision: /system/main
       tags:
       - Config
+      operationId: getV1Config
+      x-operation-id-source: derived

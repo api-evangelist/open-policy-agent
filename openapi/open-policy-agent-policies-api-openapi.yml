@@ -1,7 +1,7 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Compile Policies API
-  description: API for partially evaluating Rego queries in OPA (Open Policy Agent).
+  title: Policy Policies API
+  description: API for managing policy modules, allowing CRUD operations.
   version: 1.0.0
 tags:
 - name: Policies
@@ -36,6 +36,8 @@ paths:
           description: Server error
       tags:
       - Policies
+      operationId: getV1Policies
+      x-operation-id-source: derived
   /v1/policies/{id}:
     get:
       summary: Get a Policy
@@ -76,6 +78,8 @@ paths:
           description: Server error
       tags:
       - Policies
+      operationId: getV1PoliciesById
+      x-operation-id-source: derived
     put:
       summary: Create or Update a Policy
       description: Create or update a policy module.
@@ -118,6 +122,8 @@ paths:
           description: Server error
       tags:
       - Policies
+      operationId: putV1PoliciesById
+      x-operation-id-source: derived
     delete:
       summary: Delete a Policy
       description: Delete a policy module by its ID.
@@ -155,3 +161,5 @@ paths:
           description: Server error
       tags:
       - Policies
+      operationId: deleteV1PoliciesById
+      x-operation-id-source: derived

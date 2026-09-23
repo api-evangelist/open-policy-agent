@@ -1,7 +1,7 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Compile Query API
-  description: API for partially evaluating Rego queries in OPA (Open Policy Agent).
+  title: Query API
+  description: API for executing simple and ad-hoc queries in OPA (Open Policy Agent).
   version: 1.0.0
 tags:
 - name: Query
@@ -60,6 +60,8 @@ paths:
           description: Streaming not implemented
       tags:
       - Query
+      operationId: getV1Query
+      x-operation-id-source: derived
     post:
       summary: Execute an Ad-hoc Query (POST)
       description: Execute an ad-hoc query by providing the query in the request body.
@@ -121,3 +123,5 @@ paths:
           description: Streaming not implemented
       tags:
       - Query
+      operationId: postV1Query
+      x-operation-id-source: derived
