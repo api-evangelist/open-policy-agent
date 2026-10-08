@@ -349,6 +349,12 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/open-policy-agent.png
 access: 3rd-Party
 common:
+- type: Plans
+  url: plans/open-policy-agent-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/open-policy-agent-rate-limits.yml
+- type: FinOps
+  url: finops/open-policy-agent-finops.yml
 - type: AgenticAccess
   url: agentic-access/open-policy-agent-agentic-access.yml
 - type: VulnerabilityDisclosure
