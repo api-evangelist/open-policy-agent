@@ -1,4 +1,4 @@
-# Open Policy Agent (open-policy-agent)
+# Open Policy Agent
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,204 +66,157 @@
 
 Open Policy Agent (OPA) is an open-source project that provides a flexible and powerful policy engine for cloud-native environments. OPA enables users to define and enforce policies across their infrastructure, applications, and services through a declarative language called Rego. OPA integrates seamlessly with popular tools and frameworks like Kubernetes, Istio, and Envoy, making it easy to implement fine-grained access control, security, and compliance policies.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/open-policy-agent/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/open-policy-agent/refs/heads/main/apis.yml)
+**Areas:** Policies · Standards
 
-## Scope
+## Open Policy Agent on APIs.io
 
-- **Position:** Consuming
-- **Access:** 3rd-Party
+Everything profiled for Open Policy Agent is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/open-policy-agent/](https://apis.io/providers/open-policy-agent/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (8)
 
-- Policies
-- Standards
+- [Open Policy Agent Compile API](https://apis.io/apis/open-policy-agent/open-policy-agent-compile-api/) — The Compile API from Open Policy Agent — 1 operation(s) for compile.
+- [Open Policy Agent Config API](https://apis.io/apis/open-policy-agent/open-policy-agent-config-api/) — The Config API from Open Policy Agent — 1 operation(s) for config.
+- [Open Policy Agent Data API](https://apis.io/apis/open-policy-agent/open-policy-agent-data-api/) — The Data API from Open Policy Agent — 2 operation(s) for data.
+- [Open Policy Agent Health API](https://apis.io/apis/open-policy-agent/open-policy-agent-health-api/) — The Health API from Open Policy Agent — 2 operation(s) for health.
+- [Open Policy Agent Policies API](https://apis.io/apis/open-policy-agent/open-policy-agent-policies-api/) — The Policies API from Open Policy Agent — 2 operation(s) for policies.
+- [Open Policy Agent Query API](https://apis.io/apis/open-policy-agent/open-policy-agent-query-api-api/) — The Query API API from Open Policy Agent — 1 operation(s) for query api.
+- [Open Policy Agent Query API](https://apis.io/apis/open-policy-agent/open-policy-agent-query-api/) — The Query API from Open Policy Agent — 1 operation(s) for query.
+- [Open Policy Agent Status API](https://apis.io/apis/open-policy-agent/open-policy-agent-status-api/) — The Status API from Open Policy Agent — 1 operation(s) for status.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2024-11-18
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Open Policy Agent Policy API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-API for managing policy modules, allowing CRUD operations on Rego policy files stored in OPA.
+- [Open Policy Agent Agentic Access](https://apis.io/agentic-access/open-policy-agent/open-policy-agent-agentic-access/)
 
-- **Human URL:** [https://www.openpolicyagent.org/docs/latest/rest-api/#policy-api](https://www.openpolicyagent.org/docs/latest/rest-api/#policy-api)
+#### JSON Schema (1)
 
-#### Tags
+The data models the API reads and writes.
 
-- Management
-- Policies
-- Rego
+- [Open Policy Agent Resources](https://apis.io/schemas/open-policy-agent/opa-policy/)
 
-#### Properties
+#### JSON-LD (1)
 
-- [Documentation](https://www.openpolicyagent.org/docs/latest/rest-api/#policy-api)
-- [OpenAPI](openapi/policy-api.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/policy-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/policy-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [JSON Schema](json-schema/opa-policy-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [Bruno Collection](policy/bruno.json)
-- [Postman Collection](
-https://api-evangelist.postman.co/workspace/Open-Policy-Agentbcc99d6c-728a-4d86-83fd-b6495f5e8fb8/collection/35240-19ce2c88-97b8-4f58-a101-b8be70794a85) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+Linked-data contexts for the provider's vocabulary.
 
-### Open Policy Agent Data API
+- [Opa Context](https://apis.io/jsonld/open-policy-agent/opa-context/)
 
-API for reading and writing documents in OPA (Open Policy Agent).
+#### Collections (15)
 
-- **Human URL:** [https://www.openpolicyagent.org/docs/latest/rest-api/#data-api](https://www.openpolicyagent.org/docs/latest/rest-api/#data-api)
+Postman and Open Collection request collections.
 
-#### Tags
+- [Compile API](https://apis.io/collections/open-policy-agent/open-compile-api/)
+- [Config API](https://apis.io/collections/open-policy-agent/open-config-api/)
+- [Data API](https://apis.io/collections/open-policy-agent/open-data-api/)
+- [Health API](https://apis.io/collections/open-policy-agent/open-health-api/)
+- [Compile API](https://apis.io/collections/open-policy-agent/open-open-policy-agent-compile-api/)
+- [Compile Config API](https://apis.io/collections/open-policy-agent/open-open-policy-agent-config-api/)
+- [Compile Data API](https://apis.io/collections/open-policy-agent/open-open-policy-agent-data-api/)
+- [Compile Health API](https://apis.io/collections/open-policy-agent/open-open-policy-agent-health-api/)
+- [Compile Policies API](https://apis.io/collections/open-policy-agent/open-open-policy-agent-policies-api/)
+- [Compile Query API](https://apis.io/collections/open-policy-agent/open-open-policy-agent-query-api/)
+- [Compile Query API API](https://apis.io/collections/open-policy-agent/open-open-policy-agent-query-api-api/)
+- [Compile Status API](https://apis.io/collections/open-policy-agent/open-open-policy-agent-status-api/)
+- [Policy API](https://apis.io/collections/open-policy-agent/open-policy-api/)
+- [Query API](https://apis.io/collections/open-policy-agent/open-query-api/)
+- [Status API](https://apis.io/collections/open-policy-agent/open-status-api/)
 
-- Data
-- Documents
-- Storage
+#### Governance rules (1)
 
-#### Properties
+Spectral rulesets for the provider's contracts.
 
-- [Documentation](https://www.openpolicyagent.org/docs/latest/rest-api/#data-api)
-- [OpenAPI](openapi/data-api.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/data-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/data-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Bruno Collection](data/bruno.json)
-- [Postman Collection](
-https://api-evangelist.postman.co/workspace/Open-Policy-Agentbcc99d6c-728a-4d86-83fd-b6495f5e8fb8/collection/35240-96c58dc4-3514-48ee-a35f-a9c2aeb14fa0) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Policy Agent — jsonschema rules](https://apis.io/rules/open-policy-agent/open-policy-agent-jsonschema-spectral-rules/)
 
-### Open Policy Agent Query API
+#### Security (2)
 
-API for executing simple and ad-hoc queries in OPA (Open Policy Agent).
+Authentication, trust centre, and vulnerability disclosure.
 
-- **Human URL:** [https://www.openpolicyagent.org/docs/latest/rest-api/#query-api](https://www.openpolicyagent.org/docs/latest/rest-api/#query-api)
+- [Open Policy Agent Domain Security](https://apis.io/security/open-policy-agent/open-policy-agent-domain-security/)
+- [Open Policy Agent Vulnerability Disclosure](https://apis.io/security/open-policy-agent/open-policy-agent-vulnerability-disclosure/)
 
-#### Tags
+#### Plans and pricing (1)
 
-- Evaluation
-- Queries
-- Rego
+Published plans, tiers and prices.
 
-#### Properties
+- [Open Policy Agent Plans Pricing](https://apis.io/plans/open-policy-agent/open-policy-agent-plans-pricing/)
 
-- [Documentation](https://www.openpolicyagent.org/docs/latest/rest-api/#query-api)
-- [OpenAPI](openapi/query-api.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/query-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/query-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Bruno Collection](query/bruno.json)
-- [Postman Collection](
-https://api-evangelist.postman.co/workspace/Open-Policy-Agentbcc99d6c-728a-4d86-83fd-b6495f5e8fb8/collection/35240-9170dd84-c3d5-45a4-9efc-9ef6ab30744e) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+#### Rate limits (1)
 
-### Open Policy Agent Compile API
+Published request limits.
 
-API for partially evaluating Rego queries in OPA (Open Policy Agent).
+- [Open Policy Agent Rate Limits](https://apis.io/rate-limits/open-policy-agent/open-policy-agent-rate-limits/)
 
-- **Human URL:** [https://www.openpolicyagent.org/docs/latest/rest-api/#compile-api](https://www.openpolicyagent.org/docs/latest/rest-api/#compile-api)
+#### FinOps (1)
 
-#### Tags
+What the API costs to run, by operation.
 
-- Compile
-- Evaluation
-- Partial Evaluation
+- [Open Policy Agent Finops](https://apis.io/finops/open-policy-agent/open-policy-agent-finops/)
 
-#### Properties
+## Where to find this API
 
-- [Documentation](https://www.openpolicyagent.org/docs/latest/rest-api/#compile-api)
-- [OpenAPI](openapi/compile-api.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/compile-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/compile-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Bruno Collection](compile/bruno.json)
-- [Postman Collection](
-https://api-evangelist.postman.co/workspace/Open-Policy-Agentbcc99d6c-728a-4d86-83fd-b6495f5e8fb8/collection/35240-1e1d8e0e-7157-4b7f-99cf-611fa56a0c3c) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-### Open Policy Agent Health API
-
-API for checking the health and readiness of an OPA (Open Policy Agent) server.
-
-- **Human URL:** [https://www.openpolicyagent.org/docs/latest/rest-api/#health-api](https://www.openpolicyagent.org/docs/latest/rest-api/#health-api)
-
-#### Tags
-
-- Availability
-- Health
-- Monitoring
-
-#### Properties
-
-- [Documentation](https://www.openpolicyagent.org/docs/latest/rest-api/#health-api)
-- [OpenAPI](openapi/health-api.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/health-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/health-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Bruno Collection](health/bruno.json)
-- [Postman Collection](
-https://api-evangelist.postman.co/workspace/Open-Policy-Agentbcc99d6c-728a-4d86-83fd-b6495f5e8fb8/collection/35240-198cdb4f-e1d1-44c4-aa1f-ef8f66760d1a) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-
-### Open Policy Agent Config API
-
-API for retrieving OPA's active configuration, including discovered configurations.
-
-- **Human URL:** [https://www.openpolicyagent.org/docs/latest/rest-api/#config-api](https://www.openpolicyagent.org/docs/latest/rest-api/#config-api)
-
-#### Tags
-
-- Configurations
-- Discovery
-- Management
-
-#### Properties
-
-- [Documentation](https://www.openpolicyagent.org/docs/latest/rest-api/#config-api)
-- [OpenAPI](openapi/config-api.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/config-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/config-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Bruno Collection](config/bruno.json)
-- [Postman Collection](
-https://api-evangelist.postman.co/workspace/Open-Policy-Agentbcc99d6c-728a-4d86-83fd-b6495f5e8fb8/collection/35240-979cbaf7-8515-4fd2-8035-134685590967) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-
-### Open Policy Agent Status API
-
-API for accessing OPA (Open Policy Agent) status information via a pull-based mechanism.
-
-- **Human URL:** [https://www.openpolicyagent.org/docs/latest/rest-api/#status-api](https://www.openpolicyagent.org/docs/latest/rest-api/#status-api)
-
-#### Tags
-
-- Monitoring
-- Observability
-- Status
-
-#### Properties
-
-- [Documentation](https://www.openpolicyagent.org/docs/latest/rest-api/#status-api)
-- [OpenAPI](openapi/status-api.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/status-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/status-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Bruno Collection](status/bruno.json)
-- [Postman Collection](
-https://api-evangelist.postman.co/workspace/Open-Policy-Agentbcc99d6c-728a-4d86-83fd-b6495f5e8fb8/collection/35240-b4943ca3-d651-4c68-a003-e6ca7feace03) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-
-## Common Properties
-
-- [LinkedIn](https://www.linkedin.com/company/open-policy-agent)
-- [JSON Schema](json-schema/opa-policy-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON-LD](json-ld/opa-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
 - [Website](https://www.openpolicyagent.org/)
 - [Documentation](https://www.openpolicyagent.org/docs/latest/)
-- [Documentation](https://www.openpolicyagent.org/docs/latest/rest-api/)
-- [Getting Started](https://www.openpolicyagent.org/docs/latest/#running-opa)
-- [Authentication](https://www.openpolicyagent.org/docs/latest/rest-api/#authentication)
-- [Errors](https://www.openpolicyagent.org/docs/latest/rest-api/#errors)
-- [GitHub Organization](https://github.com/open-policy-agent)
-- [GitHub Repository](https://github.com/open-policy-agent/opa)
-- [Blog](https://blog.openpolicyagent.org/)
-- [Community](https://www.openpolicyagent.org/community/)
-- [Slack](https://slack.openpolicyagent.org/)
+- [Getting started](https://www.openpolicyagent.org/docs/latest/#running-opa)
 - [Changelog](https://github.com/open-policy-agent/opa/blob/main/CHANGELOG.md)
+- [Blog](https://blog.openpolicyagent.org/)
 - [Security](https://github.com/open-policy-agent/opa/security/policy)
-- [Stack Overflow](https://stackoverflow.com/questions/tagged/open-policy-agent)
-- [Postman Workspace](https://www.postman.com/api-evangelist/open-policy-agent/overview)
-- [GitHub Repository](https://github.com/api-search/open-policy-agent)
-- [Integrations](https://www.openpolicyagent.org/ecosystem)
+- [GitHub](https://github.com/open-policy-agent)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 36.2** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 53.6 |
+| Contract quality | 48.6 |
+| Contract governance | 9.8 |
+| Operational transparency | 36.8 |
+| Developer ergonomics | 45.2 |
+| Access clarity | 5.3 |
+
+**Agent readiness 23.3** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | partial |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 22.5** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/open-policy-agent/](https://apis.io/providers/open-policy-agent/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Open Policy Agent: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/open-policy-agent/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
